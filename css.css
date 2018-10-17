@@ -1,0 +1,113 @@
+
+*{
+  margin: 0;
+  padding: 0;
+}
+ul{
+  list-style:none;
+}
+html{
+  margin: 0;
+  background: #EEE;
+}
+
+#wrap {
+  width: 412px;
+  margin: 0 auto;
+}
+
+.m5 {
+  margin: 5px;
+}
+.p0 {
+  padding: 0;
+}
+
+.mp0 {
+  margin: 0;
+  padding: 0;
+}
+.mp5 {
+  margin: 5px;
+  padding: 5px;
+}
+.mp10 {
+  margin: 10px;
+  padding: 10px;
+}
+
+/* おのバナー */
+#shopbanner {
+  height: 5em;
+  background: #aaa;
+  background: url('shoplogo.png')  #D8D;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* 360度カメラ */
+#cammera360 {
+  height: 23em;
+  margin: 5px;
+  padding: 0;
+  background: #fff;
+}
+
+/* 通常営業の雰囲気が分かる動画 */
+#cammeraMovie {
+  height: 8em;
+  background: url('shopimage.png')  #D8D;
+  border: 3px solid #ffc900;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  position: absolute;
+  z-index: 1;
+  /* top: 0; */
+  width: 386px;
+  margin-top: -138px;
+
+}
+
+/* 販売アイテム */
+#shopArea {
+  border: 3px solid #ffc900;
+  background: #FFF;
+}
+
+.header-primery{
+  font-size:1.2em;
+  font-weight:bold;
+  margin:0;
+}
+
+#shopArea > ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#shopArea > ul li img {
+  width: 80px;
+  height: 80px;
+  margin: 5px;
+  background: #FFF;
+  border: 3px solid #FFF;
+  border-radius: 5px;
+}
+
+.button-buy {
+  text-align: center;
+  box-shadow: 0 0 2px #333;
+  width: 70px;
+  color: #fff;
+  padding: 0.8em;
+  background: #ffca00;
+  font-weight: bold;
+}
+
+#systemCaption {
+  font-size: 8px;
+  text-align: center;
+  padding-bottom: 1em;
+}
