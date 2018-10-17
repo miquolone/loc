@@ -40,7 +40,7 @@ html{
 #shopbanner {
   height: 5em;
   background: #aaa;
-  background: url('shoplogo.png')  #D8D;
+  background: url('/images/shoplogo.png')  #D8D;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -56,7 +56,7 @@ html{
 /* 通常営業の雰囲気が分かる動画 */
 #cammeraMovie {
   height: 8em;
-  background: url('shopimage.png')  #D8D;
+  background: url('/images/shopimage.png');
   border: 3px solid #ffc900;
   background-size: cover;
   background-repeat: no-repeat;
