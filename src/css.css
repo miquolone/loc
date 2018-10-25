@@ -97,6 +97,17 @@ html{
 }
 
 .button-buy {
+}
+
+#systemCaption {
+  font-size: 8px;
+  text-align: center;
+  padding-bottom: 1em;
+}
+
+.button-buy a {
+  color: #fff;
+  text-decoration: none;
   text-align: center;
   box-shadow: 0 0 2px #333;
   width: 70px;
@@ -104,10 +115,4 @@ html{
   padding: 0.8em;
   background: #ffca00;
   font-weight: bold;
-}
-
-#systemCaption {
-  font-size: 8px;
-  text-align: center;
-  padding-bottom: 1em;
 }
