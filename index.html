@@ -47,7 +47,7 @@
 
               for (i=0; i:< 8; i++ ) {
                 var clone = document.importNode(template.content, true);
-                clone.querySelector('img').src = "/images/shopItem05.png";
+                clone.querySelector('img').src = `/images/shopItem0${i}.png`;
                 itemList.appendChild(clone);
               }
             </script>
