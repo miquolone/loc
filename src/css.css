@@ -55,6 +55,7 @@ html{
 
 /* 通常営業の雰囲気が分かる動画 */
 #cammeraMovie {
+  padding: 0;
   height: 8em;
   background: url('/images/shopimage.png');
   border: 3px solid #ffc900;
@@ -71,7 +72,6 @@ html{
 
 /* 販売アイテム */
 #shopArea {
-  border: 3px solid #ffc900;
   background: #FFF;
 }
 
