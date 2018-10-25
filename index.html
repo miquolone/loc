@@ -41,16 +41,6 @@
               </li>
             </Template>
 
-            <script>
-              var itemList = document.querySelector('#itemList');
-              var template = document.getElementById('ItemTemplate');
-
-              for (i=0; i:< 8; i++ ) {
-                var clone = document.importNode(template.content, true);
-                clone.querySelector('img').src = `/images/shopItem0${i}.png`;
-                itemList.appendChild(clone);
-              }
-            </script>
           <ul class='m5 p0' id='itemList'> </ul>
         </section>
       </div>
@@ -107,3 +97,13 @@ vrView.on('click', function(event) {
 
 
 
+<script>
+var itemList = document.querySelector('#itemList');
+var template = document.getElementById('ItemTemplate');
+
+for (i=0; i < 8; i++ ) {
+  var clone = document.importNode(template.content, true);
+  clone.querySelector('img').src = `/images/shopItem0${i}.png`;
+  itemList.appendChild(clone);
+}
+</script>
