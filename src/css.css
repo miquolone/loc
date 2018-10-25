@@ -114,3 +114,15 @@ html{
   background: #ffca00;
   font-weight: bold;
 }
+
+a.cartBtn {
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 0 2px #333;
+  width: 70px;
+  color: #fff;
+  padding: 0.8em;
+  background: #f8d3e6;
+  font-weight: bold;
+}
