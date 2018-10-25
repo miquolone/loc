@@ -23,78 +23,36 @@
         <section class='mp5' id='shopArea'>
           <h3 class='header-primery'></h3>
 
-          <ul class='m5 p0'>
-            <li>
-              <img class='' src='/images/shopItem01.png'>
-              <article style='width:200px'>
-                <p style="font-size:15px">商品紹介1段目</p>
-                <p style="font-size:8px">
-                  商品紹介2段目商品紹介2段目
-                  商品紹介2段目 商品紹介2段目商品紹介2段目
-                  商品紹介2段目商品紹介2段目商品紹介2段目
-                </p>
-              </article>
-              <span class='button-buy'>
-                <a href='item.html'>購入する</a>
-              </span>
-            </li>
-            <li>
-              <img class='' src='/images/shopItem05.png'>
-              <article style='width:200px'>
-                <p style="font-size:15px">商品紹介1段目</p>
-                <p style="font-size:8px">
-                  商品紹介2段目商品紹介2段目
-                  商品紹介2段目 商品紹介2段目商品紹介2段目
-                  商品紹介2段目商品紹介2段目商品紹介2段目
-                </p>
-              </article>
-              <span class='button-buy'>
-                <a href='item.html'>購入する</a>
-              </span>
-            </li>
-            <li>
-              <img class='' src='/images/shopItem02.png'>
-              <article style='width:200px'>
-                <p style="font-size:15px">商品紹介1段目</p>
-                <p style="font-size:8px">
-                  商品紹介2段目商品紹介2段目
-                  商品紹介2段目 商品紹介2段目商品紹介2段目
-                  商品紹介2段目商品紹介2段目商品紹介2段目
-                </p>
-              </article>
-              <span class='button-buy'>
-                <a href='item.html'>購入する</a>
-              </span>
-            </li>
-            <li>
-              <img class='' src='shopItem03.jpg'>
-              <article style='width:200px'>
-                <p style="font-size:15px">商品紹介1段目</p>
-                <p style="font-size:8px">
-                  商品紹介2段目商品紹介2段目
-                  商品紹介2段目 商品紹介2段目商品紹介2段目
-                  商品紹介2段目商品紹介2段目商品紹介2段目
-                </p>
-              </article>
-              <span class='button-buy'>
-                <a href='item.html'>購入する</a>
-              </span>
-            </li>
-            <li>
-              <img class='' src='/images/shopItem04.png'>
-              <article style='width:200px'>
-                <p style="font-size:15px">商品紹介1段目</p>
-                <p style="font-size:8px">
-                  商品紹介2段目商品紹介2段目
-                  商品紹介2段目 商品紹介2段目商品紹介2段目
-                  商品紹介2段目商品紹介2段目商品紹介2段目
-                </p>
-              </article>
-              <span class='button-buy'>
-                <a href='item.html'>購入する</a>
-              </span>
-            </li>
-          </ul>
+            <!-- テンプレート -->
+            <TEMPLATE id='ItemTemplate'>
+              <li>
+                <img class='' src='/images/shopItem05.png'>
+                document.getElementById('');
+                <article style='width:200px'>
+                  <p style="font-size:15px">商品紹介1段目</p>
+                  <p style="font-size:8px">
+                    商品紹介2段目商品紹介2段目
+                    商品紹介2段目 商品紹介2段目商品紹介2段目
+                    商品紹介2段目商品紹介2段目商品紹介2段目
+                  </p>
+                </article>
+                <span class='button-buy'>
+                  <a href='item.html'>紹介</a>
+                </span>
+              </li>
+            </TEMPLATE>
+
+            <script>
+              var itemListUL = document.getElementById('body');
+              var itemTemplate = document.getElementById('#ItemTemplate');
+
+              for (i=0; i>8; i++ ) {
+                var clone = document.importNode(itemTemplate.content, true);
+                clone.querySelector('img').src = "/images/shopItem05.png";
+                itemListUL.appendChild(clone);
+              }
+            </script>
+          <ul class='m5 p0' id='itemList'> </ul>
         </section>
       </div>
     </div>
