@@ -42,13 +42,13 @@
             </Template>
 
             <script>
-              var body = document.body;
+              var itemList = document.querySelector('#itemList');
               var template = document.getElementById('ItemTemplate');
 
-              for (i=0; i < 8; i++ ) {
+              for (i=0; i:< 8; i++ ) {
                 var clone = document.importNode(template.content, true);
                 clone.querySelector('img').src = "/images/shopItem05.png";
-                body.appendChild(clone);
+                itemList.appendChild(clone);
               }
             </script>
           <ul class='m5 p0' id='itemList'> </ul>
