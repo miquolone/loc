@@ -34,7 +34,9 @@
                   商品紹介2段目商品紹介2段目商品紹介2段目
                 </p>
               </article>
-              <span class='button-buy'>購入する</span>
+              <span class='button-buy'>
+                <a href=''>購入する</a>
+              </span>
             </li>
             <li>
               <img class='' src='/images/shopItem05.png'>
@@ -46,7 +48,9 @@
                   商品紹介2段目商品紹介2段目商品紹介2段目
                 </p>
               </article>
-              <span class='button-buy'>購入する</span>
+              <span class='button-buy'>
+                <a href=''>購入する</a>
+              </span>
             </li>
             <li>
               <img class='' src='/images/shopItem02.png'>
@@ -58,7 +62,9 @@
                   商品紹介2段目商品紹介2段目商品紹介2段目
                 </p>
               </article>
-              <span class='button-buy'>購入する</span>
+              <span class='button-buy'>
+                <a href=''>購入する</a>
+              </span>
             </li>
             <li>
               <img class='' src='shopItem03.jpg'>
@@ -70,7 +76,9 @@
                   商品紹介2段目商品紹介2段目商品紹介2段目
                 </p>
               </article>
-              <span class='button-buy'>購入する</span>
+              <span class='button-buy'>
+                <a href=''>購入する</a>
+              </span>
             </li>
             <li>
               <img class='' src='/images/shopItem04.png'>
@@ -82,7 +90,9 @@
                   商品紹介2段目商品紹介2段目商品紹介2段目
                 </p>
               </article>
-              <span class='button-buy'>購入する</span>
+              <span class='button-buy'>
+                <a href=''>購入する</a>
+              </span>
             </li>
           </ul>
         </section>
@@ -101,39 +111,39 @@
 <script>
   window.addEventListener('load', onVrViewLoad);
 
-  function onVrViewLoad() {
-    // Selector '#vrview' finds element with id 'vrview'.
-    //var vrView = new VRView.Player('#vrview', {
-    //  //video: 'R0010198.MP4',
-    //  //image: 'R0010199.JPG',
-    //  image: 'download.jpg',
-    //  is_stereo: true,
-    //  //preview: true,
-    //  //is_debug: true,
-    //  width: "600",
+function onVrViewLoad() {
+  // Selector '#vrview' finds element with id 'vrview'.
+  //var vrView = new VRView.Player('#vrview', {
+  //  //video: 'R0010198.MP4',
+  //  //image: 'R0010199.JPG',
+  //  image: 'download.jpg',
+  //  is_stereo: true,
+  //  //preview: true,
+  //  //is_debug: true,
+  //  width: "600",
     //  height: "300"
-    //});
+  //});
 
-    var vrView = new VRView.Player('#vrview', {
-      width: '100%',
-      height: 300,
-      //image: 'blank.png',
-      image: 'https://storage.googleapis.com/test__rf6tgyuhijokpijuhytrdfyguhijo/R0010208.JPG',
-      is_stereo: false,
-      is_autopan_off: true
-    });
+var vrView = new VRView.Player('#vrview', {
+  width: '100%',
+  height: 300,
+  //image: 'blank.png',
+  image: 'https://storage.googleapis.com/test__rf6tgyuhijokpijuhytrdfyguhijo/R0010208.JPG',
+  is_stereo: false,
+  is_autopan_off: true
+});
 
-    vrView.on('ready', onVRViewReady);
-    vrView.on('modechange', onModeChange);
-    vrView.on('getposition', onGetPosition);
-    vrView.on('error', onVRViewError);
+vrView.on('ready', onVRViewReady);
+vrView.on('modechange', onModeChange);
+vrView.on('getposition', onGetPosition);
+vrView.on('error', onVRViewError);
 
-    vrView.on('click', function(event) {
-      if (event.id == myHotspotId) {
-        // Handle hotspot click.
-      }
-    });
+vrView.on('click', function(event) {
+  if (event.id == myHotspotId) {
+    // Handle hotspot click.
   }
+});
+}
 
 
 </script>
