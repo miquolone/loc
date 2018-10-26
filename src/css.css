@@ -155,3 +155,12 @@ a.cartBtn {
   border: 3px solid #fff;
   text-align: center;
 }
+.w80 {
+  width:80%;
+}
+.itemTitle {
+  font-size: 1.2em;
+  word-spacing: 1em;
+  letter-spacing: 5px;
+  margin: 20px 10px;
+}

@@ -7,18 +7,23 @@ const path = require('path');
 module.exports = {
   mode: "production",
   plugins: [
+    new HtmlWebpackPlugin({ minify: true, filename: "index.html", template: "./index.html" }),
+    new HtmlWebpackPlugin({ minify: true, filename: "cart.html", template: "./cart.html" }),
+    //new HtmlWebpackPlugin({ minify: true, filename: "item.html", template: "./item.html" }),
+    new HtmlWebpackPlugin({ minify: true, filename: "finish.html", template: "./finish.html" }),
+    new HtmlWebpackPlugin({ minify: true, filename: "selectPayment.html", template: "./selectPayment.html" }),
     new HtmlWebpackPlugin({
       inject: true,
       minify: {
-  collapseWhitespace: true,
-  removeComments: true,
-  removeRedundantAttributes: true,
-  removeScriptTypeAttributes: true,
-  removeStyleLinkTypeAttributes: true,
-  useShortDoctype: true
-}
-,
-      template: "./index.html"
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true
+      },
+      filename: "./lixil.html",
+      template: "./lixil.html"
     }),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
@@ -39,7 +44,8 @@ module.exports = {
     rules: [
       { test: /\.txt$/, use: ['raw-loader']},
       { test: /\.css$/, use: ['style-loader','css-loader' ]},
-      //{ test: /\.(png|svg|jpg|gif)$/, use: [ { loader: 'file-loader' , options: { name: '[name].[ext]' } } ] }
+      { test: /\.html/, use: ['html-loader']},
+      { test: /\.(png|svg|jpg|gif)$/, use: [ { loader: 'file-loader' , options: { name: '[name].[ext]' } } ] }
     ]
   },
   optimization: {
