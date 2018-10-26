@@ -12,7 +12,7 @@ function component() {
 document.body.appendChild(component());
 
 /* トップ画面*/
-if (location.pathname == "selectpayment.html") {
+if (location.pathname == "/") {
   var itemList = document.querySelector('#itemList');
   var template = document.getElementById('ItemTemplate');
 
