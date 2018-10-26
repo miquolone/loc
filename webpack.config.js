@@ -2,32 +2,27 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path');
-
-
-module.exports = {
-  mode: "production",
-  plugins: [
-    new HtmlWebpackPlugin({ minify: true, filename: "index.html", template: "./index.html" }),
-    new HtmlWebpackPlugin({ minify: true, filename: "cart.html", template: "./cart.html" }),
-    //new HtmlWebpackPlugin({ minify: true, filename: "item.html", template: "./item.html" }),
-    new HtmlWebpackPlugin({ minify: true, filename: "finish.html", template: "./finish.html" }),
-    new HtmlWebpackPlugin({ minify: true, filename: "selectPayment.html", template: "./selectPayment.html" }),
-    new HtmlWebpackPlugin({
-      inject: true,
-      minify: {
+const minifyOption = {
         collapseWhitespace: true,
         removeComments: true,
         removeRedundantAttributes: true,
         removeScriptTypeAttributes: true,
         removeStyleLinkTypeAttributes: true,
         useShortDoctype: true
-      },
-      filename: "./lixil.html",
-      template: "./lixil.html"
-    }),
+      };
+
+var index = new HtmlWebpackPlugin({ minify: minifyOption, filename: "index.html", template: "./index.html" });
+var cart = new HtmlWebpackPlugin({ minify: minifyOption, filename: "cart.html", template: "./cart.html" });
+var item = new HtmlWebpackPlugin({ inject: minifyOption, filename: "item.html", template: "./item.html" });
+var finish = new HtmlWebpackPlugin({ ibnject: minifyOption, filename: "finish.html", template: "./finish.html" });
+var payment = new HtmlWebpackPlugin({ inject: minifyOption, filename: "selectPayment.html", template: "./selectPayment.html" });
+var lixil = new HtmlWebpackPlugin({ inject: minifyOption, filename: "./lixil.html", template: "./lixil.html" });
+
+
+module.exports = {
+  mode: "production",
+  plugins: [ index, cart, item, finish, payment,
     new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
       filename: "[name].css",
       chunkFilename: "[id].css"
     })
