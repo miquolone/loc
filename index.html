@@ -11,9 +11,9 @@
         VR
         <div id='vrview'></div>
         <!--
-        <blockquote data-width="400" data-height="280" class="ricoh-theta-spherical-image" >
+          <blockquote data-width="400" data-height="280" class="ricoh-theta-spherical-image" >
           <a href="https://theta360.com/s/gOgoWzoOMzWj9pIW9dj7A3D2i" target="_blank"></a>
-        </blockquote>
+          </blockquote>
         -->
       </section>
       <section class='mp5' id='cammeraMovie'> </section>
@@ -21,23 +21,23 @@
         <section class='mp5' id='shopArea'>
           <h3 class='header-primery'></h3>
 
-            <!-- テンプレート -->
-            <Template id='ItemTemplate'>
-              <li>
-                <img class='' src='/images/shopItem05.png'>
-                <article style='padding:5px;width:260px'>
-                  <p style="font-size:15px">商品紹介1段目</p>
-                  <p style="font-size:8px">
-                    商品紹介2段目商品紹介2段目
-                    商品紹介2段目 商品紹介2段目商品紹介2段目
-                    商品紹介2段目商品紹介2段目商品紹介2段目
-                  </p>
-                </article>
-                <span class='button-buy'>
-                  <a href='item.html'>紹介</a>
-                </span>
-              </li>
-            </Template>
+          <!-- テンプレート -->
+          <Template id='ItemTemplate'>
+            <li>
+              <img class='' src='/images/shopItem05.png'>
+              <article style='padding:5px;width:260px'>
+                <p style="font-size:15px">商品紹介1段目</p>
+                <p style="font-size:8px">
+                  商品紹介2段目商品紹介2段目
+                  商品紹介2段目 商品紹介2段目商品紹介2段目
+                  商品紹介2段目商品紹介2段目商品紹介2段目
+                </p>
+              </article>
+              <span class='button-buy'>
+                <a href='item.html'>紹介</a>
+              </span>
+            </li>
+          </Template>
 
           <ul class='m5 p0' id='itemList'> </ul>
         </section>
@@ -56,12 +56,12 @@
 <script>
   window.addEventListener('load', onVrViewLoad);
 
-function onVrViewLoad() {
-  // Selector '#vrview' finds element with id 'vrview'.
-  //var vrView = new VRView.Player('#vrview', {
-  //  //video: 'R0010198.MP4',
-  //  //image: 'R0010199.JPG',
-  //  image: 'download.jpg',
+  function onVrViewLoad() {
+    // Selector '#vrview' finds element with id 'vrview'.
+    //var vrView = new VRView.Player('#vrview', {
+    //  //video: 'R0010198.MP4',
+    //  //image: 'R0010199.JPG',
+    //  image: 'download.jpg',
   //  is_stereo: true,
   //  //preview: true,
   //  //is_debug: true,
@@ -90,18 +90,4 @@ function onVrViewLoad() {
 //});
 }
 
-
-</script>
-
-
-
-<script>
-var itemList = document.querySelector('#itemList');
-var template = document.getElementById('ItemTemplate');
-
-for (i=0; i < 8; i++ ) {
-  var clone = document.importNode(template.content, true);
-  clone.querySelector('img').src = `/images/shopItem0${i}.png`;
-  itemList.appendChild(clone);
-}
 </script>

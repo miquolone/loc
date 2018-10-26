@@ -1,10 +1,25 @@
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path');
+
 
 module.exports = {
   mode: "production",
   plugins: [
+    new HtmlWebpackPlugin({
+      inject: true,
+      minify: {
+  collapseWhitespace: true,
+  removeComments: true,
+  removeRedundantAttributes: true,
+  removeScriptTypeAttributes: true,
+  removeStyleLinkTypeAttributes: true,
+  useShortDoctype: true
+}
+,
+      template: "./index.html"
+    }),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
