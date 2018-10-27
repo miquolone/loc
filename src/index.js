@@ -16,7 +16,7 @@ document.body.appendChild(component());
   if (window.innerWidth > 410) {
     document.write('スマートフォンを推奨しています。 お金や時間の都合によりパソコンでは表示できません。');
   }
-  console.oog('123');
+  console.log('123');
 
   /* トップ画面*/
   if (location.pathname == "/") {
