@@ -11,11 +11,14 @@ function component() {
 
 document.body.appendChild(component());
 
-(() => {
-
+document.addEventListener('DOMContentLoaded', () => {
   if (window.innerWidth > 410) {
     document.write('スマートフォンを推奨しています。 お金や時間の都合によりパソコンでは表示できません。');
   }
+});
+
+(() => {
+
   console.log('123');
 
   /* トップ画面*/
