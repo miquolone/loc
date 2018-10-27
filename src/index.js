@@ -11,7 +11,7 @@ function component() {
 
 document.body.appendChild(component());
 
-(function(){
+(() => {
   /* トップ画面*/
   if (location.pathname == "/") {
   console.log('koko');
@@ -28,4 +28,4 @@ document.body.appendChild(component());
   /* 決済選択画面 */
   if (location.pathname == "selectpayment.html") {
   }
-})
+})()

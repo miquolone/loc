@@ -1,6 +1,7 @@
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 const minifyOption = {
         collapseWhitespace: true,
@@ -16,7 +17,7 @@ var cart = new HtmlWebpackPlugin({ minify: minifyOption, filename: "cart.html", 
 var item = new HtmlWebpackPlugin({ inject: minifyOption, filename: "item.html", template: "./item.html" });
 var finish = new HtmlWebpackPlugin({ ibnject: minifyOption, filename: "finish.html", template: "./finish.html" });
 var payment = new HtmlWebpackPlugin({ inject: minifyOption, filename: "selectPayment.html", template: "./selectPayment.html" });
-var lixil = new HtmlWebpackPlugin({ inject: minifyOption, filename: "./lixil.html", template: "./lixil.html" });
+var lixil = new HtmlWebpackPlugin({ inject: minifyOption, filename: "lixil.html", template: "./lixil.html" });
 
 
 module.exports = {
@@ -25,7 +26,11 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css"
-    })
+    }),
+    new CopyWebpackPlugin([
+      {from:'images/'}
+    ]),
+
   ],
   entry: {
     index: ['./src/index.js', './src/widgets.js'],
