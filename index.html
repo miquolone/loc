@@ -57,21 +57,14 @@
   window.addEventListener('load', onVrViewLoad);
 
   function onVrViewLoad() {
-    // Selector '#vrview' finds element with id 'vrview'.
-    var vrView = new VRView.Player('#vrview', {
-      image: 'https://storage.googleapis.com/test__rf6tgyuhijokpijuhytrdfyguhijo/tokyoStation.jpg',
-      is_stereo: true,
-      //preview: true,
-      //is_debug: true,
-      width: "600",
-      height: "300"
-    });
-
     var vrView = new VRView.Player('#vrview', {
       width: '100%',
       height: 300,
+      image: 'https://storage.googleapis.com/test__rf6tgyuhijokpijuhytrdfyguhijo/tokyoStation.jpg',
       //image: 'blank.png',
       image: '一旦非公開',
+      //preview: true,
+      //is_debug: true,
       is_stereo: false,
       is_autopan_off: true
     });
