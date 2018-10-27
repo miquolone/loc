@@ -14,7 +14,6 @@ document.body.appendChild(component());
 (() => {
   /* トップ画面*/
   if (location.pathname == "/") {
-    console.log('koko');
     const itemList = document.querySelector('#itemList');
     const template = document.getElementById('ItemTemplate');
 
