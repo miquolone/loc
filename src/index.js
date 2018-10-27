@@ -9,13 +9,14 @@ function component() {
   return element;
 }
 
-if (window.innerWidth > 410) {
-  document.write('スマートフォンを推奨しています。 お金や時間の都合によりパソコンでは表示できません。');
-}
-
 document.body.appendChild(component());
 
 (() => {
+
+  if (window.innerWidth > 410) {
+    document.write('スマートフォンを推奨しています。 お金や時間の都合によりパソコンでは表示できません。');
+  }
+
   /* トップ画面*/
   if (location.pathname == "/") {
 
