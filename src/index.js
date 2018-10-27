@@ -4,9 +4,13 @@ import _ from 'lodash';
 
 function component() {
   let element = document.createElement('div');
-  element.innerHTML = _.join(['', 'も'], ' ');
+  element.innerHTML = _.join(['', ''], ' ');
 
   return element;
+}
+
+if (window.innerWidth > 410) {
+  document.write('スマートフォンでご覧ください');
 }
 
 document.body.appendChild(component());
