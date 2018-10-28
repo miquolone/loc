@@ -164,3 +164,10 @@ a.cartBtn {
   letter-spacing: 5px;
   margin: 20px 10px;
 }
+.button1 {
+    color: #ffca00;
+    font-size: 1.7em;
+    border: solid;
+    background: snow;
+    margin-bottom: 1em;
+}
