@@ -1,3 +1,5 @@
+import 'jquery';
+import 'bootstrap';
 import 'normalize.css';
 import './css.css';
 import _ from 'lodash';
