@@ -1,4 +1,5 @@
 import 'jquery';
+import 'photo-sphere-viewer';
 import 'bootstrap';
 import 'normalize.css';
 import './css.css';
