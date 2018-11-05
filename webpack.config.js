@@ -32,6 +32,13 @@ module.exports = {
     ]),
 
   ],
+  externals: [
+    {
+      jquery: 'jQuery',
+      photoSphererViewer: 'photo-sphere-viewer',
+      bootstrap:'bootstrap'
+    }
+  ],
   entry: {
     index: ['./src/index.js', './src/widgets.js', './node_modules/photo-sphere-viewer/dist/photo-sphere-viewer.min.js'],
     another: './src/bottom.js'

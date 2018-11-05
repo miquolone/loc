@@ -27,12 +27,16 @@ document.addEventListener('DOMContentLoaded', () => {
   /* トップ画面*/
   if (location.pathname == "/") {
 
-    var viewer = new PhotoSphereViewer({
-      container: 'viewer',
-      panorama: 'https://storage.googleapis.com/test__rf6tgyuhijokpijuhytrdfyguhijo/tokyoStation.jpg'
+    window.addEventListener('DOMContentLoaded', function(){
+      var viewer = new PhotoSphereViewer({
+        container: 'viewer',
+        panorama: 'https://storage.googleapis.com/test__rf6tgyuhijokpijuhytrdfyguhijo/tokyoStation.jpg'
+      });
     });
 
-    //window.addEventListener('load', onVrViewLoad);
+    /**
+     * window.addEventListener('load', onVrViewLoad);
+     */
 
     const itemList = document.querySelector('#itemList');
     const template = document.getElementById('ItemTemplate');
