@@ -34,9 +34,7 @@ module.exports = {
   ],
   externals: [
     {
-      jquery: 'jQuery',
       photoSphererViewer: 'photo-sphere-viewer',
-      bootstrap:'bootstrap'
     }
   ],
   entry: {
