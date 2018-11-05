@@ -28,10 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (location.pathname == "/") {
 
     window.addEventListener('DOMContentLoaded', function(){
-      var viewer = new PhotoSphereViewer({
-        container: 'viewer',
-        panorama: 'https://storage.googleapis.com/test__rf6tgyuhijokpijuhytrdfyguhijo/tokyoStation.jpg'
-      });
     });
 
     /**
