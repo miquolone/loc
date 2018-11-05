@@ -27,7 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
   /* トップ画面*/
   if (location.pathname == "/") {
 
-    window.addEventListener('load', onVrViewLoad);
+    var viewer = new PhotoSphereViewer({
+      container: 'viewer',
+      panorama: 'https://storage.googleapis.com/test__rf6tgyuhijokpijuhytrdfyguhijo/tokyoStation.jpg'
+    });
+
+    //window.addEventListener('load', onVrViewLoad);
 
     const itemList = document.querySelector('#itemList');
     const template = document.getElementById('ItemTemplate');
