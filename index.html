@@ -77,12 +77,12 @@
     loading_img: "https://photo-sphere-viewer.js.org/assets/photosphere-logo.gif",
     navbar: ['zoom','markers',
       {
-        id: 'my-button',
-        title: 'Hello world',
+        id: 'testAlertButton',
+        title: 'testAlert',
         className: 'custom-button',
-        content: 'Custom',
+        content: 'これを押すと?',
         onClick: function() {
-          alert('Hello from custom button');
+          alert('いろんなことができます');
         }
       },
     ],
@@ -97,10 +97,10 @@
         longitude: 0.2,
         latitude: -0.13770,
         image: rootURL + '/assets/pin-blue.png',
-        width: 32,
-        height: 32,
+        width: 38,
+        height: 38,
         anchor: 'bottom center',
-        tooltip: 'A image marker. <b>Click me!</b>',
+        tooltip: '■1. <br> <h1>削除</h1>',
         content: document.getElementById('systemCaption').innerHTML
       },
       {
@@ -108,7 +108,7 @@
         id: 'text',
         longitude: 0,
         latitude: 0,
-        html: 'HTML <b>marker</b> &hearts;',
+        html: '<b class="font-size:1.3em;border: 3px solid #888;">3,000円</b> &hearts;',
         anchor: 'bottom right',
         scale: [0.5, 1.5],
         style: {
@@ -119,7 +119,7 @@
           textAlign: 'center'
         },
         tooltip: {
-          content: 'An HTML marker',
+          content: '<b class="font-size:1.3em;border: 3px solid #888;">3,000円</b> &hearts;',
           position: 'right'
         }
       },
@@ -165,7 +165,7 @@
       }
     ],
     size: {
-      height: 250
+      height: 240
     }
   });
 
