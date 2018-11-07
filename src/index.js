@@ -79,17 +79,16 @@ function onVrViewLoad() {
     caption: '',
     time_anim: false,
     loading_img: "https://photo-sphere-viewer.js.org/assets/photosphere-logo.gif",
-    navbar: ['zoom','markers'],
+    navbar: ['markers'],
     default_fov: 70,
     default_lat: 0.3,
     mousewheel: false,
     touchmove_two_fingers: false,
     markers: [
       {
-        // image marker that opens the panel when clicked
         id: 'image',
         longitude: 0.2,
-        latitude: -0.13770,
+        latitude: -0.23770,
         image: rootURL + '/assets/pin-blue.png',
         width: 38,
         height: 38,
@@ -103,23 +102,17 @@ function onVrViewLoad() {
         latitude: 0,
         html: '<b class="font-size:1.3em;border: 3px solid #888;">3,000円</b> &hearts;',
         anchor: 'bottom right',
-        scale: [0.5, 1.5],
+        scale: [1.0, 3.5],
         style: {
-          maxWidth: '100px',
+          maxWidth: '150px',
           color: 'white',
           fontSize: '20px',
           fontFamily: 'Helvetica, sans-serif',
           textAlign: 'center'
         },
         tooltip: {
-          content: '<div style="height:100px; width:90px;"><b style="font-size:1.1em;">3,000円</b> &hearts;<br>２行目<br>3行目',
+          content: '<div style="height:100px; width:90px;"><b style="font-size:1.1em;">3,000円</b> &hearts;<br>２行目<br>3行目</div>',
           position: 'right',
-          style: {
-            height: "280px",
-            width: "150px",
-            backgroundColor: 'rgba(255, 255, 255, 0.8)',
-            cursor         : '------'
-          }
         }
       },
     ],
