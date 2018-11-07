@@ -1,6 +1,7 @@
 
 const  bootstrap = require('bootstrap');
 const  three = require('three');
+const PhotoSphereViewer = require('photo-sphere-viewer');
 const jquery = require('jquery');
 const request = require('superagent');
 const nocache = require('superagent-no-cache');
