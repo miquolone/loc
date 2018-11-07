@@ -1,5 +1,7 @@
 import 'jquery';
 import 'bootstrap';
+import 'three';
+import 'superagent';
 import 'normalize.css';
 import './css.css';
 import _ from 'lodash';
