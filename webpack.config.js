@@ -35,7 +35,7 @@ module.exports = {
   externals: [
     {
       'photoSphereViewer': 'photo-sphere-viewer',
-      'THREE': 'three',
+      'THREE': 'three/build/three'
     }
   ],
   entry: {
