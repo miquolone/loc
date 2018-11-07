@@ -26,12 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* トップ画面*/
   if (location.pathname == "/") {
 
-    window.addEventListener('DOMContentLoaded', function(){
-    });
-
-    /**
-     * window.addEventListener('load', onVrViewLoad);
-     */
+    window.addEventListener('DOMContentLoaded', onVrViewLoad);
 
     const itemList = document.querySelector('#itemList');
     const template = document.getElementById('ItemTemplate');
