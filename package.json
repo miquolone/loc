@@ -31,7 +31,9 @@
     "normalize.css": "^8.0.0",
     "photo-sphere-viewer": "^3.4.1",
     "popper.js": "^1.14.4",
-    "superagent": "^4.0.0-beta.5"
+    "superagent": "^4.0.0-beta.5",
+    "superagent-no-cache": "^0.1.1",
+    "superagent-prefix": "0.0.2"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^4.6.0",

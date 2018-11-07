@@ -1,10 +1,14 @@
-import 'jquery';
-import 'bootstrap';
-import 'three';
-import 'superagent';
+
+const  bootstrap = require('bootstrap');
+const  three = require('three');
+const jquery = require('jquery');
+const request = require('superagent');
+const nocache = require('superagent-no-cache');
+const prefix = require('superagent-prefix')('/static');
+
+import _ from 'lodash';
 import 'normalize.css';
 import './css.css';
-import _ from 'lodash';
 
 function component() {
   let element = document.createElement('div');
