@@ -1,6 +1,7 @@
 
 const bootstrap = require('bootstrap');
-const THREE = require('three');
+//const THREE = require('three');
+import three from 'three';
 const PhotoSphereViewer = require('photo-sphere-viewer');
 const jquery = require('jquery');
 const request = require('superagent');
