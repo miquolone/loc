@@ -34,7 +34,7 @@ module.exports = {
   ],
   externals: [
     {
-      'photo-sphere-viewer': 'photo-sphere-viewer',
+      'photoSphereViewer': 'photo-sphere-viewer',
     }
   ],
   entry: {
