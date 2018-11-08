@@ -34,21 +34,21 @@ module.exports = {
   ],
   externals: [
     {
-      'THREE': '../three.min.js',
-      'photoSphereViewer': './node_modules/photo-sphere-viewer/dist/photo-sphere-viewer'
+      //'THREE': './three.min.js',
+      //'photoSphereViewer': './node_modules/photo-sphere-viewer/dist/photo-sphere-viewer'
     }
   ],
   entry: {
     index: [
       './src/index.js',
       './src/widgets.js',
-      './node_modules/three/build/three',
+      //'./node_modules/three/build/three',
       './node_modules/d.js/lib/D.min.js',
       './node_modules/dot/doT.min.js',
       './node_modules/uevent/uevent.min.js',
       //'./node_modules/three/examples/js/renderers/CanvasRenderer.js',
-      './node_modules/three/examples/js/renderers/Projector.js',
-      './node_modules/photo-sphere-viewer/dist/photo-sphere-viewer.min.js',
+      //'./node_modules/three/examples/js/renderers/Projector.js',
+      //'./node_modules/photo-sphere-viewer/dist/photo-sphere-viewer.min.js',
       './node_modules/photo-sphere-viewer/dist/photo-sphere-viewer.min.css'
     ],
     another: './src/bottom.js'
