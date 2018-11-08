@@ -3,6 +3,6 @@
  xmlns:xlink="http://www.w3.org/1999/xlink"
  width="63.5mm" height="42.333mm">
 <rect  x="0" y="0" width="180" height="120" fill="white" />
-<text kerning="auto" font-family="Kozuka Gothic Pr6N" fill="rgb(0, 0, 0)" font-size="60px" x="15px" y="55.76px"><tspan font-size="60px" font-family="pigmo" fill="#000000">&#20385;&#26684;</tspan></text>
-<text kerning="auto" font-family="Kozuka Gothic Pr6N" fill="rgb(0, 0, 0)" font-size="60px" x="22px" y="114.06px"><tspan font-size="60px" font-family="pigmo">&#53;&#48;&#48;&#48;&#20870;</tspan></text>
+<text kerning="auto" font-family="Kozuka Gothic Pr6N" fill="rgb(0, 0, 0)" font-size="60px" x="34px" y="49.141px"><tspan font-size="60px" font-family="Osaka">&#30475;&#26495;</tspan></text>
+<text kerning="auto" font-family="Kozuka Gothic Pr6N" fill="rgb(0, 0, 0)" font-size="48px" x="20px" y="104.5px"><tspan font-size="48px" font-family="Osaka">&#53;&#48;&#48;&#48;&#20870;</tspan></text>
 </svg>
