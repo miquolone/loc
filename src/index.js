@@ -6,6 +6,7 @@
 //const nocache = require('superagent-no-cache');
 //const prefix = require('superagent-prefix')('/static');
 
+import 'three';
 import THREE from 'three';
 import _ from 'lodash';
 import 'normalize.css';
