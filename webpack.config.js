@@ -34,7 +34,7 @@ module.exports = {
   ],
   externals: [
     {
-      'THREE': './three.min.js',
+      'THREE': '../three.min.js',
       'photoSphereViewer': './node_modules/photo-sphere-viewer/dist/photo-sphere-viewer'
     }
   ],

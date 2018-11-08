@@ -13,7 +13,7 @@ import 'normalize.css';
 import './css.css';
 
 const PhotoSphereViewer = require('photo-sphere-viewer');
-const THREE = require('three.min.js');
+const THREE = require('three');
 function component() {
   let element = document.createElement('div');
   element.innerHTML = _.join(['', ''], ' ');
