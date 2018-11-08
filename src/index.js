@@ -8,7 +8,7 @@ const PhotoSphereViewer = require('photo-sphere-viewer');
 //const nocache = require('superagent-no-cache');
 //const prefix = require('superagent-prefix')('/static');
 
-//import _ from 'lodash';
+import _ from 'lodash';
 import 'normalize.css';
 import './css.css';
 
