@@ -85,7 +85,7 @@ function onVrViewLoad() {
         id: 'image',
         longitude: 0.2,
         latitude: -0.23770,
-        image: 'kakaku.svg',
+        image: '/images/kakaku.svg',
         width: 38,
         height: 38,
         anchor: 'bottom center',
