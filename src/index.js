@@ -1,14 +1,14 @@
 
-const bootstrap = require('bootstrap');
-const THREE = require('three');
-//import THREE from 'three';
+//const bootstrap = require('bootstrap');
+//const THREE = require('three');
+import THREE from 'three';
 const PhotoSphereViewer = require('photo-sphere-viewer');
-const jquery = require('jquery');
-const request = require('superagent');
-const nocache = require('superagent-no-cache');
-const prefix = require('superagent-prefix')('/static');
+//const jquery = require('jquery');
+//const request = require('superagent');
+//const nocache = require('superagent-no-cache');
+//const prefix = require('superagent-prefix')('/static');
 
-import _ from 'lodash';
+//import _ from 'lodash';
 import 'normalize.css';
 import './css.css';
 
