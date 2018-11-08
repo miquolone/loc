@@ -1,17 +1,17 @@
 
 //const bootstrap = require('bootstrap');
 //const THREE = require('three');
-import THREE from 'three';
-const PhotoSphereViewer = require('photo-sphere-viewer');
 //const jquery = require('jquery');
 //const request = require('superagent');
 //const nocache = require('superagent-no-cache');
 //const prefix = require('superagent-prefix')('/static');
 
+import THREE from 'three';
 import _ from 'lodash';
 import 'normalize.css';
 import './css.css';
 
+const PhotoSphereViewer = require('photo-sphere-viewer');
 function component() {
   let element = document.createElement('div');
   element.innerHTML = _.join(['', ''], ' ');
