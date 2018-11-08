@@ -6,13 +6,14 @@
 //const nocache = require('superagent-no-cache');
 //const prefix = require('superagent-prefix')('/static');
 
-import 'three';
-import THREE from 'three';
+//import 'three';
+//import THREE from 'three';
 import _ from 'lodash';
 import 'normalize.css';
 import './css.css';
 
 const PhotoSphereViewer = require('photo-sphere-viewer');
+const THREE = require('../three.min.js');
 function component() {
   let element = document.createElement('div');
   element.innerHTML = _.join(['', ''], ' ');
