@@ -2,7 +2,8 @@
 const bootstrap = require('bootstrap');
 //const THREE = require('three');
 import THREE from 'three';
-const PhotoSphereViewer = require('photo-sphere-viewer');
+//const PhotoSphereViewer = require('photo-sphere-viewer');
+const PhotoSphereViewer = require('../photo-sphere-viewer.js');
 const jquery = require('jquery');
 const request = require('superagent');
 const nocache = require('superagent-no-cache');
@@ -104,7 +105,7 @@ function onVrViewLoad() {
         latitude: 0,
         html: '<b class="font-size:1.3em;border: 3px solid #888;">3,000円</b> &hearts;',
         anchor: 'bottom right',
-        scale: [1.0, 3.5],
+        scale: [0.5, 1.5],
         style: {
           maxWidth: '150px',
           color: 'white',
