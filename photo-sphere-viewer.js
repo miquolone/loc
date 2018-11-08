@@ -1,4 +1,3 @@
-console.log('aaaa');
 /*!
  * Photo Sphere Viewer 3.4.1
  * Copyright (c) 2014-2015 Jérémy Heleine
@@ -2251,7 +2250,7 @@ PhotoSphereViewer.prototype.destroy = function() {
 
   // destroy components
   if (this.tooltip) {
-    //this.tooltip.destroy();
+    this.tooltip.destroy();
   }
   if (this.notification) {
     this.notification.destroy();
@@ -2292,7 +2291,7 @@ PhotoSphereViewer.prototype.destroy = function() {
   delete this.navbar;
   delete this.hud;
   delete this.panel;
-  //delete this.tooltip;
+  delete this.tooltip;
   delete this.notification;
   delete this.overlay;
   delete this.canvas_container;
@@ -3469,6 +3468,7 @@ PSVHUD.prototype.removeMarker = function(marker, render) {
   }
 
   if (this.hoveringMarker === marker) {
+    this.psv.tooltip.hideTooltip();
   }
 
   marker.destroy();
@@ -3855,6 +3855,7 @@ PSVHUD.prototype._onMouseLeave = function(e) {
 
     this.hoveringMarker = null;
 
+    this.psv.tooltip.hideTooltip();
   }
 };
 
@@ -3899,6 +3900,7 @@ PSVHUD.prototype._onMouseMove = function(e) {
 
       this.hoveringMarker = null;
 
+      this.psv.tooltip.hideTooltip();
     }
   }
 };
@@ -4897,7 +4899,7 @@ PSVTooltip.prototype = Object.create(PSVComponent.prototype);
 PSVTooltip.prototype.constructor = PSVTooltip;
 
 PSVTooltip.className = 'psv-tooltip';
-PSVTooltip.publicMethods = ['showTooltip', 'isTooltipVisible'];
+PSVTooltip.publicMethods = ['showTooltip', 'hideTooltip', 'isTooltipVisible'];
 
 PSVTooltip.leftMap = { 0: 'left', 0.5: 'center', 1: 'right' };
 PSVTooltip.topMap = { 0: 'top', 0.5: 'center', 1: 'bottom' };
@@ -4938,7 +4940,7 @@ PSVTooltip.prototype.destroy = function() {
 PSVTooltip.prototype.handleEvent = function(e) {
   switch (e.type) {
     // @formatter:off
-    //case 'render': this.hideTooltip(); break;
+    case 'render': this.hideTooltip(); break;
     // @formatter:on
   }
 };
@@ -5087,6 +5089,35 @@ PSVTooltip.prototype.showTooltip = function(config) {
        */
       this.psv.trigger('show-tooltip');
     }.bind(this), this.config.delay);
+  }
+};
+
+/**
+ * @summary Hides the tooltip
+ * @fires module:components.PSVTooltip.hide-tooltip
+ */
+PSVTooltip.prototype.hideTooltip = function() {
+  if (this.prop.timeout) {
+    window.clearTimeout(this.prop.timeout);
+    this.prop.timeout = null;
+  }
+
+  if (this.isTooltipVisible()) {
+    this.container.classList.remove('psv-tooltip--visible');
+
+    this.prop.timeout = window.setTimeout(function() {
+      this.content.innerHTML = null;
+      this.container.style.top = '-1000px';
+      this.container.style.left = '-1000px';
+      this.prop.timeout = null;
+    }.bind(this), this.config.delay);
+
+    /**
+     * @event hide-tooltip
+     * @memberof module:components.PSVTooltip
+     * @summary Trigered when the tooltip is hidden
+     */
+    this.psv.trigger('hide-tooltip');
   }
 };
 
