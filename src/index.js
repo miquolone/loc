@@ -100,11 +100,11 @@ function onVrViewLoad() {
         longitude: 0.2,
         latitude: -0.23770,
         image: '/images/kakaku.svg',
-        width: 38,
-        height: 38,
+        width: 60,
+        height: 40,
         anchor: 'bottom center',
         tooltip: {
-          content: '<a onClick="gotoItem(this)" style="padding-right:2em;display:block;font-size:1.1em;"> 看板<br>3,000円<br>柱に内蔵 </a>',
+          content: '<a onClick="gotoItem(this)" style="padding:1em;display:block;font-size:8px;">3,000円<br>資生堂マキアージュ </a>',
           position: 'right',
         },
         content: console.log('asdfa')
@@ -113,7 +113,7 @@ function onVrViewLoad() {
         id: 'textKakaku',
         longitude: 0.2,
         latitude: 0.25770,
-        html: '<a class="display:block;font-size:1.3em;border: 3px solid #888;">天井のライト<br>照明器具</a> &hearts;',
+        html: '<a class="display:block;font-size:8px;border: 3px solid #888;">天井のライト<br>照明器具</a> &hearts;',
         anchor: 'bottom right',
         scale: [0.5, 1.5],
         style: {
