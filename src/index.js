@@ -98,8 +98,8 @@ function onVrViewLoad() {
         width: 38,
         height: 38,
         anchor: 'bottom center',
-        tooltip: '■1. 削除',
-        content: document.getElementById('systemCaption').innerHTML
+        tooltip: '',
+        content: console.log('asdfa')
       },
       {
         id: 'text',
@@ -129,4 +129,5 @@ function onVrViewLoad() {
   PSV.hideNavbar();
   //PSV.parseAngle( '0.14']);
   //PSV.parsePosition("10% 50%");
+  PSV.showTooltip({ content: 'Hello world', top: 200, left: 450, position: 'center bottom'})
 }
