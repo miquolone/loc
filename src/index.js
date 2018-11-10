@@ -113,7 +113,7 @@ function onVrViewLoad() {
         id: 'textKakaku',
         longitude: 0.2,
         latitude: 0.25770,
-        html: '<a class="font-size:1.3em;border: 3px solid #888;">天井のライト<br>照明器具</a> &hearts;',
+        html: '<a class="display:block;font-size:1.3em;border: 3px solid #888;">天井のライト<br>照明器具</a> &hearts;',
         anchor: 'bottom right',
         scale: [0.5, 1.5],
         style: {
