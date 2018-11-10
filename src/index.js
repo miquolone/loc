@@ -103,14 +103,17 @@ function onVrViewLoad() {
         width: 38,
         height: 38,
         anchor: 'bottom center',
-        tooltip: '',
+        tooltip: {
+          content: '<a onClick="gotoItem(this)" style="padding-right:2em;display:block;font-size:1.1em;"> 看板<br>3,000円<br>柱に内蔵 </a>',
+          position: 'right',
+        },
         content: console.log('asdfa')
       },
       {
         id: 'textKakaku',
         longitude: 0.2,
-        latitude: 0.83770,
-        html: '<a class="font-size:1.3em;border: 3px solid #888;">3,000円</a> &hearts;',
+        latitude: 0.25770,
+        html: '<a class="font-size:1.3em;border: 3px solid #888;">天井のライト<br>照明器具</a> &hearts;',
         anchor: 'bottom right',
         scale: [0.5, 1.5],
         style: {
@@ -121,7 +124,7 @@ function onVrViewLoad() {
           textAlign: 'center'
         },
         tooltip: {
-          content: '<a onClick="gotoItem(this)" style="padding-right:2em;display:block;font-size:1.1em;">3,000円 &hearts;<br>２行目<br>3行目</a>',
+          content: '<a onClick="gotoItem(this)" style="padding-right:2em;display:block;font-size:1.1em;">2,800円<br>天井のライト<br>ダウンスポット</a>',
           position: 'right',
         }
       },

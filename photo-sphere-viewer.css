@@ -301,11 +301,6 @@
     color: #000;
     font: 13px sans-serif;
     text-shadow: 0 1px #fff; }
-  .station-tooltip-arrow {
-    position: absolute;
-    height: 0;
-    width: 0;
-    border: 7px solid transparent; }
   .station-tooltip--bottom-center {
     -webkit-box-shadow: 0 3px 0 rgba(90, 90, 90, 0.7);
             box-shadow: 0 3px 0 rgba(90, 90, 90, 0.7);
@@ -315,8 +310,6 @@
     transition-property: opacity, -webkit-transform;
     transition-property: opacity, transform;
     transition-property: opacity, transform, -webkit-transform; }
-    .station-tooltip--bottom-center .station-tooltip-arrow {
-      border-bottom-color: rgba(61, 61, 61, 0.8); }
   .station-tooltip--center-left {
     -webkit-box-shadow: -3px 0 0 rgba(90, 90, 90, 0.7);
             box-shadow: -3px 0 0 rgba(90, 90, 90, 0.7);
@@ -326,8 +319,6 @@
     transition-property: opacity, -webkit-transform;
     transition-property: opacity, transform;
     transition-property: opacity, transform, -webkit-transform; }
-    .station-tooltip--center-left .station-tooltip-arrow {
-      border-left-color: rgba(61, 61, 61, 0.8); }
   .station-tooltip--top-center {
     -webkit-box-shadow: 0 -3px 0 rgba(90, 90, 90, 0.7);
             box-shadow: 0 -3px 0 rgba(90, 90, 90, 0.7);
@@ -337,8 +328,6 @@
     transition-property: opacity, -webkit-transform;
     transition-property: opacity, transform;
     transition-property: opacity, transform, -webkit-transform; }
-    .station-tooltip--top-center .station-tooltip-arrow {
-      border-top-color: rgba(61, 61, 61, 0.8); }
   .station-tooltip--center-right {
     -webkit-box-shadow: 3px 0 0 rgba(90, 90, 90, 0.7);
             box-shadow: 3px 0 0 rgba(90, 90, 90, 0.7);
@@ -348,8 +337,6 @@
     transition-property: opacity, -webkit-transform;
     transition-property: opacity, transform;
     transition-property: opacity, transform, -webkit-transform; }
-    .station-tooltip--center-right .station-tooltip-arrow {
-      border-right-color: rgba(255, 255, 255, 1.0); }
   .station-tooltip--bottom-left {
     -webkit-box-shadow: -3px 3px 0 rgba(90, 90, 90, 0.7);
             box-shadow: -3px 3px 0 rgba(90, 90, 90, 0.7);
@@ -359,8 +346,6 @@
     transition-property: opacity, -webkit-transform;
     transition-property: opacity, transform;
     transition-property: opacity, transform, -webkit-transform; }
-    .station-tooltip--bottom-left .station-tooltip-arrow {
-      border-bottom-color: rgba(61, 61, 61, 0.8); }
   .station-tooltip--bottom-right {
     -webkit-box-shadow: 3px 3px 0 rgba(90, 90, 90, 0.7);
             box-shadow: 3px 3px 0 rgba(90, 90, 90, 0.7);
@@ -370,8 +355,6 @@
     transition-property: opacity, -webkit-transform;
     transition-property: opacity, transform;
     transition-property: opacity, transform, -webkit-transform; }
-    .station-tooltip--bottom-right .station-tooltip-arrow {
-      border-bottom-color: rgba(61, 61, 61, 0.8); }
   .station-tooltip--top-left {
     -webkit-box-shadow: -3px -3px 0 rgba(90, 90, 90, 0.7);
             box-shadow: -3px -3px 0 rgba(90, 90, 90, 0.7);
@@ -381,8 +364,6 @@
     transition-property: opacity, -webkit-transform;
     transition-property: opacity, transform;
     transition-property: opacity, transform, -webkit-transform; }
-    .station-tooltip--top-left .station-tooltip-arrow {
-      border-top-color: rgba(61, 61, 61, 0.8); }
   .station-tooltip--top-right {
     -webkit-box-shadow: 3px -3px 0 rgba(90, 90, 90, 0.7);
             box-shadow: 3px -3px 0 rgba(90, 90, 90, 0.7);
@@ -392,8 +373,6 @@
     transition-property: opacity, -webkit-transform;
     transition-property: opacity, transform;
     transition-property: opacity, transform, -webkit-transform; }
-    .station-tooltip--top-right .station-tooltip-arrow {
-      border-top-color: rgba(61, 61, 61, 0.8); }
       .station-tooltip--visible {
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
@@ -409,10 +388,10 @@
       .station-tooltip--visible:after {
         content: "△";
         position: absolute;
-        right: -15px;
-        top: 50px;
+        right: -17px;
+        top: 37px;
         transform: rotate(90deg);
-        font-size: 1em;
+        font-size: 8px;
       }
 .station-notification {
   position: absolute;
