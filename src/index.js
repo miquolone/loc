@@ -3,7 +3,7 @@
 import _ from 'lodash';
 import 'normalize.css';
 import './css.css';
-import '../photo-sphere-viewer.min.css';
+import '../photo-sphere-viewer.css';
 
 const PhotoSphereViewer = require('../photo-sphere-viewer');
 //const THREE = require('three');
@@ -14,6 +14,10 @@ function component() {
   return element;
 }
 
+
+window.gotoItem = function(target) {
+  console.log(target);
+}
 document.body.appendChild(component());
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -92,7 +96,7 @@ function onVrViewLoad() {
     touchmove_two_fingers: false,
     markers: [
       {
-        id: 'image',
+        id: 'imageKakaku',
         longitude: 0.2,
         latitude: -0.23770,
         image: '/images/kakaku.svg',
@@ -103,10 +107,10 @@ function onVrViewLoad() {
         content: console.log('asdfa')
       },
       {
-        id: 'text',
+        id: 'textKakaku',
         longitude: 0.2,
         latitude: 0.83770,
-        html: '<b class="font-size:1.3em;border: 3px solid #888;">3,000円</b> &hearts;',
+        html: '<a class="font-size:1.3em;border: 3px solid #888;">3,000円</a> &hearts;',
         anchor: 'bottom right',
         scale: [0.5, 1.5],
         style: {
@@ -117,7 +121,7 @@ function onVrViewLoad() {
           textAlign: 'center'
         },
         tooltip: {
-          content: '<div style="height:100px; width:90px;"><b style="font-size:1.1em;">3,000円</b> &hearts;<br>２行目<br>3行目</div>',
+          content: '<a onClick="gotoItem(this)" style="padding-right:2em;display:block;font-size:1.1em;">3,000円 &hearts;<br>２行目<br>3行目</a>',
           position: 'right',
         }
       },

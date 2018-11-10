@@ -49,7 +49,7 @@ module.exports = {
       //'./node_modules/three/examples/js/renderers/CanvasRenderer.js',
       //'./node_modules/three/examples/js/renderers/Projector.js',
       //'./node_modules/photo-sphere-viewer/dist/photo-sphere-viewer.min.js',
-      './node_modules/photo-sphere-viewer/dist/photo-sphere-viewer.min.css'
+      //'./node_modules/photo-sphere-viewer/dist/photo-sphere-viewer.min.css'
     ],
     another: './src/bottom.js'
   },
