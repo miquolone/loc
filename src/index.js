@@ -74,7 +74,7 @@ function onVrViewLoad() {
     container: 'vrview',
     caption: '',
     time_anim: false,
-    loading_img: "https://photo-sphere-viewer.js.org/assets/photosphere-logo.gif",
+    loading_img: "/images/tumblr_nurhzkuKQO1syz1nro1_540.gif",
     navbar: ['markers'],
     default_fov: 70,
     default_lat: 0.3,
@@ -116,4 +116,6 @@ function onVrViewLoad() {
       height: 350
     }
   });
+
+  PSV.hideNavbar();
 }
