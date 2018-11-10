@@ -72,6 +72,15 @@ function onVrViewLoad() {
     //panorama: "https://photo-sphere-viewer.js.org/assets/Bryce-Canyon-National-Park-Mark-Doliner.jpg",
     panorama: "./images/tokyoStation.jpg",
     container: 'vrview',
+    pano_data: {
+      full_width: 4000,
+      full_height: 2000,
+      cropped_width: 3000,
+      cropped_height: 1500,
+      cropped_x: 500,
+      cropped_y: 250
+    },
+
     caption: '',
     time_anim: false,
     loading_img: "/images/tumblr_nurhzkuKQO1syz1nro1_540.gif",
@@ -118,4 +127,6 @@ function onVrViewLoad() {
   });
 
   PSV.hideNavbar();
+  //PSV.parseAngle( '0.14']);
+  //PSV.parsePosition("10% 50%");
 }
