@@ -3,8 +3,9 @@
 import _ from 'lodash';
 import 'normalize.css';
 import './css.css';
+import '../photo-sphere-viewer.min.css';
 
-const PhotoSphereViewer = require('photo-sphere-viewer');
+const PhotoSphereViewer = require('../photo-sphere-viewer');
 //const THREE = require('three');
 function component() {
   let element = document.createElement('div');

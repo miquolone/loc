@@ -1,3 +1,4 @@
+console.log('-----aaaa----');
 /*!
  * Photo Sphere Viewer 3.4.1
  * Copyright (c) 2014-2015 Jérémy Heleine
@@ -463,7 +464,7 @@ function PhotoSphereViewer(options) {
 
   // create actual container
   this.container = document.createElement('div');
-  this.container.classList.add('psv-container');
+  this.container.classList.add('station-container');
   this.parent.appendChild(this.container);
 
   // apply container size
@@ -520,7 +521,7 @@ function PhotoSphereViewer(options) {
   // enable GUI after first render
   this.once('render', function() {
     if (this.config.navbar) {
-      this.container.classList.add('psv-container--has-navbar');
+      this.container.classList.add('station-container--has-navbar');
       this.navbar.show();
     }
 
@@ -553,7 +554,7 @@ function PhotoSphereViewer(options) {
   }.bind(this));
 
   PhotoSphereViewer.SYSTEM.touchEnabled.then(function() {
-    this.container.classList.add('psv-is-touch');
+    this.container.classList.add('station-is-touch');
   }.bind(this));
 }
 
@@ -1124,8 +1125,8 @@ PhotoSphereViewer.prototype._createScene = function() {
 
   // create canvas container
   this.canvas_container = document.createElement('div');
-  this.canvas_container.className = 'psv-canvas-container';
-  this.renderer.domElement.className = 'psv-canvas';
+  this.canvas_container.className = 'station-canvas-container';
+  this.renderer.domElement.className = 'station-canvas';
   this.container.appendChild(this.canvas_container);
   this.canvas_container.appendChild(this.renderer.domElement);
 };
@@ -1555,13 +1556,13 @@ PhotoSphereViewer.DEFAULTS = {
  */
 PhotoSphereViewer.TEMPLATES = {
   markersList: '\
-<div class="psv-markers-list-container"> \
-  <h1 class="psv-markers-list-title">{{= it.config.lang.markers }}</h1> \
-  <ul class="psv-markers-list"> \
+<div class="station-markers-list-container"> \
+  <h1 class="station-markers-list-title">{{= it.config.lang.markers }}</h1> \
+  <ul class="station-markers-list"> \
   {{~ it.markers: marker }} \
-    <li data-psv-marker="{{= marker.id }}" class="psv-markers-list-item {{? marker.className }}{{= marker.className }}{{?}}"> \
-      {{? marker.image }}<img class="psv-markers-list-image" src="{{= marker.image }}"/>{{?}} \
-      <p class="psv-markers-list-name">{{? marker.tooltip }}{{= marker.tooltip.content }}{{?? marker.html }}{{= marker.html }}{{??}}{{= marker.id }}{{?}}</p> \
+    <li data-station-marker="{{= marker.id }}" class="station-markers-list-item {{? marker.className }}{{= marker.className }}{{?}}"> \
+      {{? marker.image }}<img class="station-markers-list-image" src="{{= marker.image }}"/>{{?}} \
+      <p class="station-markers-list-name">{{? marker.tooltip }}{{= marker.tooltip.content }}{{?? marker.html }}{{= marker.html }}{{??}}{{= marker.id }}{{?}}</p> \
     </li> \
   {{~}} \
   </ul> \
@@ -1866,7 +1867,7 @@ PhotoSphereViewer.prototype._startMoveZoom = function(evt) {
  * @private
  */
 PhotoSphereViewer.prototype._stopMove = function(evt) {
-  if (!PSVUtils.getClosest(evt.target, '.psv-hud')) {
+  if (!PSVUtils.getClosest(evt.target, '.station-hud')) {
     return;
   }
 
@@ -3294,7 +3295,7 @@ function PSVHUD(psv) {
 PSVHUD.prototype = Object.create(PSVComponent.prototype);
 PSVHUD.prototype.constructor = PSVHUD;
 
-PSVHUD.className = 'psv-hud';
+PSVHUD.className = 'station-hud';
 PSVHUD.publicMethods = [
   'addMarker',
   'removeMarker',
@@ -3318,7 +3319,7 @@ PSVHUD.prototype.create = function() {
   PSVComponent.prototype.create.call(this);
 
   this.svgContainer = document.createElementNS(PSVUtils.svgNS, 'svg');
-  this.svgContainer.setAttribute('class', 'psv-hud-svg-container');
+  this.svgContainer.setAttribute('class', 'station-hud-svg-container');
   this.container.appendChild(this.svgContainer);
 
   // Markers events via delegation
@@ -3579,7 +3580,7 @@ PSVHUD.prototype.showMarkersList = function() {
   this.prop.panelOpening = true;
   this.psv.panel.showPanel(html, true);
 
-  this.psv.panel.container.querySelector('.psv-markers-list').addEventListener('click', this._onClickItem.bind(this));
+  this.psv.panel.container.querySelector('.station-markers-list').addEventListener('click', this._onClickItem.bind(this));
 };
 
 /**
@@ -3642,7 +3643,7 @@ PSVHUD.prototype.renderMarkers = function() {
       }
     }
 
-    PSVUtils.toggleClass(marker.$el, 'psv-marker--visible', isVisible);
+    PSVUtils.toggleClass(marker.$el, 'station-marker--visible', isVisible);
   }.bind(this));
 };
 
@@ -3671,14 +3672,14 @@ PSVHUD.prototype._isMarkerVisible = function(marker, position) {
 PSVHUD.prototype._getMarkerPosition = function(marker) {
   if (marker._dynamicSize) {
     // make the marker visible to get it's size
-    PSVUtils.toggleClass(marker.$el, 'psv-marker--transparent', true);
+    PSVUtils.toggleClass(marker.$el, 'station-marker--transparent', true);
     var transform = marker.$el.style.transform;
     marker.$el.style.transform = null;
 
     var rect = marker.$el.getBoundingClientRect();
 
     marker.$el.style.transform = transform;
-    PSVUtils.toggleClass(marker.$el, 'psv-marker--transparent', false);
+    PSVUtils.toggleClass(marker.$el, 'station-marker--transparent', false);
 
     marker.width = rect.right - rect.left;
     marker.height = rect.bottom - rect.top;
@@ -3916,7 +3917,7 @@ PSVHUD.prototype._onMouseMove = function(e) {
  */
 PSVHUD.prototype._onClick = function(data, e, dblclick) {
   var marker;
-  if (data.target && (marker = PSVUtils.getClosest(data.target, '.psv-marker')) && marker.psvMarker) {
+  if (data.target && (marker = PSVUtils.getClosest(data.target, '.station-marker')) && marker.psvMarker) {
     this.currentMarker = marker.psvMarker;
 
     /**
@@ -4046,7 +4047,7 @@ function PSVLoader(psv) {
 PSVLoader.prototype = Object.create(PSVComponent.prototype);
 PSVLoader.prototype.constructor = PSVLoader;
 
-PSVLoader.className = 'psv-loader-container';
+PSVLoader.className = 'station-loader-container';
 
 /**
  * @override
@@ -4057,11 +4058,11 @@ PSVLoader.prototype.create = function() {
   var pixelRatio = PhotoSphereViewer.SYSTEM.pixelRatio;
 
   this.loader = document.createElement('div');
-  this.loader.className = 'psv-loader';
+  this.loader.className = 'station-loader';
   this.container.appendChild(this.loader);
 
   this.canvas = document.createElement('canvas');
-  this.canvas.className = 'psv-loader-canvas';
+  this.canvas.className = 'station-loader-canvas';
 
   this.canvas.width = this.loader.clientWidth * pixelRatio;
   this.canvas.height = this.loader.clientWidth * pixelRatio;
@@ -4072,12 +4073,12 @@ PSVLoader.prototype.create = function() {
   var inner;
   if (this.psv.config.loading_img) {
     inner = document.createElement('img');
-    inner.className = 'psv-loader-image';
+    inner.className = 'station-loader-image';
     inner.src = this.psv.config.loading_img;
   }
   else if (this.psv.config.loading_txt) {
     inner = document.createElement('div');
-    inner.className = 'psv-loader-text';
+    inner.className = 'station-loader-text';
     inner.innerHTML = this.psv.config.loading_txt;
   }
   if (inner) {
@@ -4176,7 +4177,7 @@ function PSVNavBar(psv) {
 PSVNavBar.prototype = Object.create(PSVComponent.prototype);
 PSVNavBar.prototype.constructor = PSVNavBar;
 
-PSVNavBar.className = 'psv-navbar psv-navbar--open';
+PSVNavBar.className = 'station-navbar station-navbar--open';
 PSVNavBar.publicMethods = ['showNavbar', 'hideNavbar', 'toggleNavbar', 'getNavbarButton'];
 
 /**
@@ -4297,7 +4298,7 @@ PSVNavBar.prototype.hideNavbar = function() {
  * @param {boolean} active
  */
 PSVNavBar.prototype.toggleNavbar = function(active) {
-  PSVUtils.toggleClass(this.container, 'psv-navbar--open', active);
+  PSVUtils.toggleClass(this.container, 'station-navbar--open', active);
 };
 
 
@@ -4343,7 +4344,7 @@ function PSVNavBarCaption(navbar, caption) {
 PSVNavBarCaption.prototype = Object.create(PSVComponent.prototype);
 PSVNavBarCaption.prototype.constructor = PSVNavBarCaption;
 
-PSVNavBarCaption.className = 'psv-caption';
+PSVNavBarCaption.className = 'station-caption';
 PSVNavBarCaption.publicMethods = ['setCaption'];
 
 /**
@@ -4356,7 +4357,7 @@ PSVNavBarCaption.prototype.create = function() {
   this.button.hide();
 
   this.content = document.createElement('div');
-  this.content.className = 'psv-caption-content';
+  this.content.className = 'station-caption-content';
   this.container.appendChild(this.content);
 
   window.addEventListener('resize', this);
@@ -4440,7 +4441,7 @@ function PSVNotification(psv) {
 PSVNotification.prototype = Object.create(PSVComponent.prototype);
 PSVNotification.prototype.constructor = PSVNotification;
 
-PSVNotification.className = 'psv-notification';
+PSVNotification.className = 'station-notification';
 PSVNotification.publicMethods = ['showNotification', 'hideNotification', 'isNotificationVisible'];
 
 /**
@@ -4450,7 +4451,7 @@ PSVNotification.prototype.create = function() {
   PSVComponent.prototype.create.call(this);
 
   this.content = document.createElement('div');
-  this.content.className = 'psv-notification-content';
+  this.content.className = 'station-notification-content';
 
   this.container.appendChild(this.content);
 
@@ -4471,7 +4472,7 @@ PSVNotification.prototype.destroy = function() {
  * @returns {boolean}
  */
 PSVNotification.prototype.isNotificationVisible = function() {
-  return this.container.classList.contains('psv-notification--visible');
+  return this.container.classList.contains('station-notification--visible');
 };
 
 /**
@@ -4493,7 +4494,7 @@ PSVNotification.prototype.showNotification = function(config) {
 
   this.content.innerHTML = config.content;
 
-  this.container.classList.add('psv-notification--visible');
+  this.container.classList.add('station-notification--visible');
 
   /**
    * @event show-notification
@@ -4513,7 +4514,7 @@ PSVNotification.prototype.showNotification = function(config) {
  */
 PSVNotification.prototype.hideNotification = function() {
   if (this.isNotificationVisible()) {
-    this.container.classList.remove('psv-notification--visible');
+    this.container.classList.remove('station-notification--visible');
 
     /**
      * @event hide-notification
@@ -4542,7 +4543,7 @@ function PSVOverlay(psv) {
 PSVOverlay.prototype = Object.create(PSVComponent.prototype);
 PSVOverlay.prototype.constructor = PSVOverlay;
 
-PSVOverlay.className = 'psv-overlay';
+PSVOverlay.className = 'station-overlay';
 PSVOverlay.publicMethods = ['showOverlay', 'hideOverlay', 'isOverlayVisible'];
 
 /**
@@ -4552,15 +4553,15 @@ PSVOverlay.prototype.create = function() {
   PSVComponent.prototype.create.call(this);
 
   this.image = document.createElement('div');
-  this.image.className = 'psv-overlay-image';
+  this.image.className = 'station-overlay-image';
   this.container.appendChild(this.image);
 
   this.text = document.createElement('div');
-  this.text.className = 'psv-overlay-text';
+  this.text.className = 'station-overlay-text';
   this.container.appendChild(this.text);
 
   this.subtext = document.createElement('div');
-  this.subtext.className = 'psv-overlay-subtext';
+  this.subtext.className = 'station-overlay-subtext';
   this.container.appendChild(this.subtext);
 
   this.container.addEventListener('click', this.hideOverlay.bind(this));
@@ -4674,7 +4675,7 @@ function PSVPanel(psv) {
 PSVPanel.prototype = Object.create(PSVComponent.prototype);
 PSVPanel.prototype.constructor = PSVPanel;
 
-PSVPanel.className = 'psv-panel';
+PSVPanel.className = 'station-panel';
 PSVPanel.publicMethods = ['showPanel', 'hidePanel'];
 
 /**
@@ -4684,13 +4685,13 @@ PSVPanel.prototype.create = function() {
   PSVComponent.prototype.create.call(this);
 
   this.container.innerHTML =
-    '<div class="psv-panel-resizer"></div>' +
-    '<div class="psv-panel-close-button"></div>' +
-    '<div class="psv-panel-content"></div>';
+    '<div class="station-panel-resizer"></div>' +
+    '<div class="station-panel-close-button"></div>' +
+    '<div class="station-panel-content"></div>';
 
-  this.content = this.container.querySelector('.psv-panel-content');
+  this.content = this.container.querySelector('.station-panel-content');
 
-  var closeBtn = this.container.querySelector('.psv-panel-close-button');
+  var closeBtn = this.container.querySelector('.station-panel-close-button');
   closeBtn.addEventListener('click', this.hidePanel.bind(this));
 
   // Stop event bubling from panel
@@ -4701,7 +4702,7 @@ PSVPanel.prototype.create = function() {
   }
 
   // Event for panel resizing + stop bubling
-  var resizer = this.container.querySelector('.psv-panel-resizer');
+  var resizer = this.container.querySelector('.station-panel-resizer');
   resizer.addEventListener('mousedown', this);
   resizer.addEventListener('touchstart', this);
   this.psv.container.addEventListener('mouseup', this);
@@ -4752,9 +4753,9 @@ PSVPanel.prototype.handleEvent = function(e) {
 PSVPanel.prototype.showPanel = function(content, noMargin) {
   this.content.innerHTML = content;
   this.content.scrollTop = 0;
-  this.container.classList.add('psv-panel--open');
+  this.container.classList.add('station-panel--open');
 
-  PSVUtils.toggleClass(this.content, 'psv-panel-content--no-margin', noMargin === true);
+  PSVUtils.toggleClass(this.content, 'station-panel-content--no-margin', noMargin === true);
 
   this.prop.opened = true;
 
@@ -4773,7 +4774,7 @@ PSVPanel.prototype.showPanel = function(content, noMargin) {
 PSVPanel.prototype.hidePanel = function() {
   this.content.innerHTML = null;
   this.prop.opened = false;
-  this.container.classList.remove('psv-panel--open');
+  this.container.classList.remove('station-panel--open');
 
   /**
    * @event close-panel
@@ -4812,7 +4813,7 @@ PSVPanel.prototype._onMouseUp = function(evt) {
   if (this.prop.mousedown) {
     evt.stopPropagation();
     this.prop.mousedown = false;
-    this.content.classList.remove('psv-panel-content--no-interaction');
+    this.content.classList.remove('station-panel-content--no-interaction');
   }
 };
 
@@ -4848,7 +4849,7 @@ PSVPanel.prototype._startResize = function(evt) {
   this.prop.mouse_x = parseInt(evt.clientX);
   this.prop.mouse_y = parseInt(evt.clientY);
   this.prop.mousedown = true;
-  this.content.classList.add('psv-panel-content--no-interaction');
+  this.content.classList.add('station-panel-content--no-interaction');
 };
 
 /**
@@ -4898,7 +4899,7 @@ function PSVTooltip(hud) {
 PSVTooltip.prototype = Object.create(PSVComponent.prototype);
 PSVTooltip.prototype.constructor = PSVTooltip;
 
-PSVTooltip.className = 'psv-tooltip';
+PSVTooltip.className = 'station-tooltip';
 PSVTooltip.publicMethods = ['showTooltip', 'hideTooltip', 'isTooltipVisible'];
 
 PSVTooltip.leftMap = { 0: 'left', 0.5: 'center', 1: 'right' };
@@ -4910,12 +4911,12 @@ PSVTooltip.topMap = { 0: 'top', 0.5: 'center', 1: 'bottom' };
 PSVTooltip.prototype.create = function() {
   PSVComponent.prototype.create.call(this);
 
-  this.container.innerHTML = '<div class="psv-tooltip-arrow"></div><div class="psv-tooltip-content"></div>';
+  this.container.innerHTML = '<div class="station-tooltip-arrow"></div><div class="station-tooltip-content"></div>';
   this.container.style.top = '-1000px';
   this.container.style.left = '-1000px';
 
-  this.content = this.container.querySelector('.psv-tooltip-content');
-  this.arrow = this.container.querySelector('.psv-tooltip-arrow');
+  this.content = this.container.querySelector('.station-tooltip-content');
+  this.arrow = this.container.querySelector('.station-tooltip-arrow');
 
   this.psv.on('render', this);
 };
@@ -4950,7 +4951,7 @@ PSVTooltip.prototype.handleEvent = function(e) {
  * @returns {boolean}
  */
 PSVTooltip.prototype.isTooltipVisible = function() {
-  return this.container.classList.contains('psv-tooltip--visible');
+  return this.container.classList.contains('station-tooltip--visible');
 };
 
 /**
@@ -5013,13 +5014,13 @@ PSVTooltip.prototype.showTooltip = function(config) {
     // Remove every other classes (Firefox does not implements forEach)
     for (var i = t.classList.length - 1; i >= 0; i--) {
       var item = t.classList.item(i);
-      if (item !== 'psv-tooltip' && item !== 'psv-tooltip--visible') {
+      if (item !== 'station-tooltip' && item !== 'station-tooltip--visible') {
         t.classList.remove(item);
       }
     }
   }
   else {
-    t.className = 'psv-tooltip'; // reset the class
+    t.className = 'station-tooltip'; // reset the class
   }
 
   if (config.className) {
@@ -5074,12 +5075,12 @@ PSVTooltip.prototype.showTooltip = function(config) {
   a.style.top = style.arrow_top + 'px';
   a.style.left = style.arrow_left + 'px';
 
-  t.classList.add('psv-tooltip--' + style.posClass.join('-'));
+  t.classList.add('station-tooltip--' + style.posClass.join('-'));
 
   // delay for correct transition between the two classes
   if (!isUpdate) {
     this.prop.timeout = window.setTimeout(function() {
-      t.classList.add('psv-tooltip--visible');
+      t.classList.add('station-tooltip--visible');
       this.prop.timeout = null;
 
       /**
@@ -5103,7 +5104,7 @@ PSVTooltip.prototype.hideTooltip = function() {
   }
 
   if (this.isTooltipVisible()) {
-    this.container.classList.remove('psv-tooltip--visible');
+    this.container.classList.remove('station-tooltip--visible');
 
     this.prop.timeout = window.setTimeout(function() {
       this.content.innerHTML = null;
@@ -5295,7 +5296,7 @@ PSVNavBarButton.prototype.supported = function() {
  * @param {boolean} [active] - forced state
  */
 PSVNavBarButton.prototype.toggleActive = function(active) {
-  PSVUtils.toggleClass(this.container, 'psv-button--active', active);
+  PSVUtils.toggleClass(this.container, 'station-button--active', active);
 
   if (this.constructor.iconActive) {
     this._setIcon(active ? this.constructor.iconActive : this.constructor.icon);
@@ -5306,7 +5307,7 @@ PSVNavBarButton.prototype.toggleActive = function(active) {
  * @summary Disables the button
  */
 PSVNavBarButton.prototype.disable = function() {
-  this.container.classList.add('psv-button--disabled');
+  this.container.classList.add('station-button--disabled');
 
   this.enabled = false;
 };
@@ -5315,7 +5316,7 @@ PSVNavBarButton.prototype.disable = function() {
  * @summary Enables the button
  */
 PSVNavBarButton.prototype.enable = function() {
-  this.container.classList.remove('psv-button--disabled');
+  this.container.classList.remove('station-button--disabled');
 
   this.enabled = true;
 };
@@ -5333,7 +5334,7 @@ PSVNavBarButton.prototype._setIcon = function(icon, container) {
   if (icon) {
     container.innerHTML = PhotoSphereViewer.ICONS[icon];
     // classList not supported on IE11, className is read-only !!!!
-    container.querySelector('svg').setAttribute('class', 'psv-button-svg');
+    container.querySelector('svg').setAttribute('class', 'station-button-svg');
   }
   else {
     container.innerHTML = '';
@@ -5367,7 +5368,7 @@ PSVNavBarAutorotateButton.prototype = Object.create(PSVNavBarButton.prototype);
 PSVNavBarAutorotateButton.prototype.constructor = PSVNavBarAutorotateButton;
 
 PSVNavBarAutorotateButton.id = 'autorotate';
-PSVNavBarAutorotateButton.className = 'psv-button psv-button--hover-scale psv-autorotate-button';
+PSVNavBarAutorotateButton.className = 'station-button station-button--hover-scale station-autorotate-button';
 PSVNavBarAutorotateButton.icon = 'play.svg';
 PSVNavBarAutorotateButton.iconActive = 'play-active.svg';
 
@@ -5428,7 +5429,7 @@ PSVNavBarCaptionButton.prototype = Object.create(PSVNavBarButton.prototype);
 PSVNavBarCaptionButton.prototype.constructor = PSVNavBarCaptionButton;
 
 PSVNavBarCaptionButton.id = 'markers';
-PSVNavBarCaptionButton.className = 'psv-button psv-button--hover-scale psv-caption-button';
+PSVNavBarCaptionButton.className = 'station-button station-button--hover-scale station-caption-button';
 PSVNavBarCaptionButton.icon = 'info.svg';
 
 /**
@@ -5512,7 +5513,7 @@ function PSVNavBarCustomButton(navbar, config) {
 PSVNavBarCustomButton.prototype = Object.create(PSVNavBarButton.prototype);
 PSVNavBarCustomButton.prototype.constructor = PSVNavBarCustomButton;
 
-PSVNavBarCustomButton.className = 'psv-button psv-custom-button';
+PSVNavBarCustomButton.className = 'station-button station-custom-button';
 
 /**
  * @override
@@ -5578,7 +5579,7 @@ PSVNavBarDownloadButton.prototype = Object.create(PSVNavBarButton.prototype);
 PSVNavBarDownloadButton.prototype.constructor = PSVNavBarDownloadButton;
 
 PSVNavBarDownloadButton.id = 'download';
-PSVNavBarDownloadButton.className = 'psv-button psv-button--hover-scale psv-download-button';
+PSVNavBarDownloadButton.className = 'station-button station-button--hover-scale station-download-button';
 PSVNavBarDownloadButton.icon = 'download.svg';
 
 /**
@@ -5611,7 +5612,7 @@ PSVNavBarFullscreenButton.prototype = Object.create(PSVNavBarButton.prototype);
 PSVNavBarFullscreenButton.prototype.constructor = PSVNavBarFullscreenButton;
 
 PSVNavBarFullscreenButton.id = 'fullscreen';
-PSVNavBarFullscreenButton.className = 'psv-button psv-button--hover-scale psv-fullscreen-button';
+PSVNavBarFullscreenButton.className = 'station-button station-button--hover-scale station-fullscreen-button';
 PSVNavBarFullscreenButton.icon = 'fullscreen-in.svg';
 PSVNavBarFullscreenButton.iconActive = 'fullscreen-out.svg';
 
@@ -5679,7 +5680,7 @@ PSVNavBarGyroscopeButton.prototype = Object.create(PSVNavBarButton.prototype);
 PSVNavBarGyroscopeButton.prototype.constructor = PSVNavBarGyroscopeButton;
 
 PSVNavBarGyroscopeButton.id = 'gyroscope';
-PSVNavBarGyroscopeButton.className = 'psv-button psv-button--hover-scale psv-gyroscope-button';
+PSVNavBarGyroscopeButton.className = 'station-button station-button--hover-scale station-gyroscope-button';
 PSVNavBarGyroscopeButton.icon = 'compass.svg';
 
 /**
@@ -5752,7 +5753,7 @@ PSVNavBarMarkersButton.prototype = Object.create(PSVNavBarButton.prototype);
 PSVNavBarMarkersButton.prototype.constructor = PSVNavBarMarkersButton;
 
 PSVNavBarMarkersButton.id = 'markers';
-PSVNavBarMarkersButton.className = 'psv-button psv-button--hover-scale psv-markers-button';
+PSVNavBarMarkersButton.className = 'station-button station-button--hover-scale station-markers-button';
 PSVNavBarMarkersButton.icon = 'pin.svg';
 
 /**
@@ -5781,7 +5782,7 @@ PSVNavBarStereoButton.prototype = Object.create(PSVNavBarButton.prototype);
 PSVNavBarStereoButton.prototype.constructor = PSVNavBarStereoButton;
 
 PSVNavBarStereoButton.id = 'stereo';
-PSVNavBarStereoButton.className = 'psv-button psv-button--hover-scale psv-stereo-button';
+PSVNavBarStereoButton.className = 'station-button station-button--hover-scale station-stereo-button';
 PSVNavBarStereoButton.icon = 'stereo.svg';
 
 /**
@@ -5879,7 +5880,7 @@ PSVNavBarZoomButton.prototype = Object.create(PSVNavBarButton.prototype);
 PSVNavBarZoomButton.prototype.constructor = PSVNavBarZoomButton;
 
 PSVNavBarZoomButton.id = 'zoom';
-PSVNavBarZoomButton.className = 'psv-button psv-zoom-button';
+PSVNavBarZoomButton.className = 'station-button station-zoom-button';
 
 /**
  * @override
@@ -5888,25 +5889,25 @@ PSVNavBarZoomButton.prototype.create = function() {
   PSVNavBarButton.prototype.create.call(this);
 
   var zoom_minus = document.createElement('div');
-  zoom_minus.className = 'psv-zoom-button-minus';
+  zoom_minus.className = 'station-zoom-button-minus';
   zoom_minus.title = this.psv.config.lang.zoomOut;
   this._setIcon('zoom-out.svg', zoom_minus);
   this.container.appendChild(zoom_minus);
 
   var zoom_range_bg = document.createElement('div');
-  zoom_range_bg.className = 'psv-zoom-button-range';
+  zoom_range_bg.className = 'station-zoom-button-range';
   this.container.appendChild(zoom_range_bg);
 
   this.zoom_range = document.createElement('div');
-  this.zoom_range.className = 'psv-zoom-button-line';
+  this.zoom_range.className = 'station-zoom-button-line';
   zoom_range_bg.appendChild(this.zoom_range);
 
   this.zoom_value = document.createElement('div');
-  this.zoom_value.className = 'psv-zoom-button-handle';
+  this.zoom_value.className = 'station-zoom-button-handle';
   this.zoom_range.appendChild(this.zoom_value);
 
   var zoom_plus = document.createElement('div');
-  zoom_plus.className = 'psv-zoom-button-plus';
+  zoom_plus.className = 'station-zoom-button-plus';
   zoom_plus.title = this.psv.config.lang.zoomIn;
   this._setIcon('zoom-in.svg', zoom_plus);
   this.container.appendChild(zoom_plus);
@@ -6253,7 +6254,7 @@ function PSVMarker(properties, psv) {
     $el = document.createElementNS(PSVUtils.svgNS, this.type);
   }
 
-  $el.id = 'psv-marker-' + this.id;
+  $el.id = 'station-marker-' + this.id;
   $el.psvMarker = this;
 
   this.update(properties);
@@ -6378,10 +6379,10 @@ PSVMarker.prototype.update = function(properties) {
 
   // reset CSS class
   if (this.isNormal()) {
-    this.$el.setAttribute('class', 'psv-marker psv-marker--normal');
+    this.$el.setAttribute('class', 'station-marker station-marker--normal');
   }
   else {
-    this.$el.setAttribute('class', 'psv-marker psv-marker--svg');
+    this.$el.setAttribute('class', 'station-marker station-marker--svg');
   }
 
   // add CSS classes
