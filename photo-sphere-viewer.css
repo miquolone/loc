@@ -380,16 +380,16 @@
         -webkit-transition-duration: 100ms;
         transition-duration: 100ms;
 
-        border-right: 2px solid #f9cd34;
-        box-shadow: 20px 0px 0 #ffffff;
+        border: 2px solid #f9cd34;
+        box-shadow: 20px 0px 0 #f9cd34;
         border-radius: 5px 0px 0px 5px;
       }
 
       .station-tooltip--visible:after {
-        content: "△";
+        content: "□";
         position: absolute;
         right: -17px;
-        top: 37px;
+        top: 0px;
         transform: rotate(90deg);
         font-size: 8px;
       }
