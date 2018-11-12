@@ -4823,6 +4823,7 @@ PSVPanel.prototype._onMouseUp = function(evt) {
  * @private
  */
 PSVPanel.prototype._onMouseMove = function(evt) {
+console.log('moveing!');
   if (this.prop.mousedown) {
     evt.stopPropagation();
     this._resize(evt);
