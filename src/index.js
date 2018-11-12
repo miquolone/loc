@@ -107,6 +107,9 @@ function onVrViewLoad() {
         tooltip: {
           content: '<a onClick="gotoItem(this)" style="padding:1em;display:block;font-size:8px;">3,000円<br>資生堂マキアージュ </a>',
           position: 'right',
+          onClick: function() {
+            alert('1');
+          },
         },
         content: console.log('asdfa')
       },
@@ -127,6 +130,9 @@ function onVrViewLoad() {
         tooltip: {
           content: '<a onClick="gotoItem(this)" style="padding-right:2em;display:block;font-size:1.1em;">2,800円<br>天井のライト<br>ダウンスポット</a>',
           position: 'right',
+          onClick: function() {
+            alert('2');
+          },
         }
       },
     ],
@@ -139,5 +145,4 @@ function onVrViewLoad() {
   //PSV.parseAngle( '0.14']);
   //PSV.parsePosition("10% 50%");
   PSV.showTooltip({ content: 'Hello world', top: 200, left: 450, position: 'center bottom'})
-  PSV.click(function(){ console.log('クリック'); })
 }
