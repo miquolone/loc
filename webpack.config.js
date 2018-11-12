@@ -23,7 +23,7 @@ var lixil = new HtmlWebpackPlugin({ inject: minifyOption, filename: "lixil.html"
 
 module.exports = {
   mode: "production",
-  plugins: [ index, cart, item, finish, payment, lixil,
+  plugins: [ index, cart, item, finish, payment, lixil, adtest,
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css"
