@@ -148,5 +148,7 @@ function onVrViewLoad() {
   //PSV.parseAngle( '0.14']);
   //PSV.parsePosition("10% 50%");
   PSV.showTooltip({ content: 'Hello world', top: 200, left: 450, position: 'center bottom'})
-
+  PSV.ready = function() {
+    document.querySelector('.station-hud').addEventListener('click',function(){console.log(2)})
+  }
 }
