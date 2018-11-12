@@ -139,8 +139,5 @@ function onVrViewLoad() {
   //PSV.parseAngle( '0.14']);
   //PSV.parsePosition("10% 50%");
   PSV.showTooltip({ content: 'Hello world', top: 200, left: 450, position: 'center bottom'})
-  PSV.click(clickdata,function(){
-  console.log('クリック');
-  console.log(clickdata);
-  })
+  PSV.click(function(){ console.log('クリック'); })
 }
