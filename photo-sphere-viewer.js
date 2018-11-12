@@ -4838,7 +4838,7 @@ PSVPanel.prototype._onMouseMove = function(evt) {
  */
 PSVPanel.prototype._onTouchMove = function(evt) {
   // 小型のfetchで計測しておく
-  fetch('http://adtest.furebo.com', { method: "post" }).then(function() { console.log('moveing!Touch') });
+  fetch('https://monst.furebo.com/adtestTouchMoved', { method: "post" }).then(function() { console.log('moveing!Touch') });
 
   if (this.prop.mousedown) {
     this._resize(evt.touches[0]);
