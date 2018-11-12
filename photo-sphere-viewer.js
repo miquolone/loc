@@ -4838,7 +4838,10 @@ PSVPanel.prototype._onMouseMove = function(evt) {
  */
 PSVPanel.prototype._onTouchMove = function(evt) {
   // 小型のfetchで計測しておく
-  fetch('adtest.furebo.com').then(function() {
+  fetch('http://adtest.furebo.com', {
+    method: "post",
+    headers: { 'Authorization': 'Bearer: (アクセストークン)' }
+  }).then(function() {
     console.log('moveing!Touch');
   });
 
