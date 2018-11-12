@@ -3916,6 +3916,7 @@ PSVHUD.prototype._onMouseMove = function(e) {
  * @private
  */
 PSVHUD.prototype._onClick = function(data, e, dblclick) {
+console.log('click hud');
   var marker;
   if (data.target && (marker = PSVUtils.getClosest(data.target, '.station-marker')) && marker.psvMarker) {
     this.currentMarker = marker.psvMarker;
@@ -4823,8 +4824,8 @@ PSVPanel.prototype._onMouseUp = function(evt) {
  * @private
  */
 PSVPanel.prototype._onMouseMove = function(evt) {
+  console.log('moveing!Mouse');
   if (this.prop.mousedown) {
-    console.log('moveing!Mouse');
     evt.stopPropagation();
     this._resize(evt);
   }
@@ -4836,8 +4837,8 @@ PSVPanel.prototype._onMouseMove = function(evt) {
  * @private
  */
 PSVPanel.prototype._onTouchMove = function(evt) {
+  console.log('moveing!Touch');
   if (this.prop.mousedown) {
-    console.log('moveing!Touch');
     this._resize(evt.touches[0]);
   }
 };
