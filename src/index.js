@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('123');
 
   /* トップ画面*/
-  if (location.pathname == "/") {
+  if (location.pathname == "/" || location.pathname == "/adtest" ) {
 
     window.addEventListener('DOMContentLoaded', onVrViewLoad);
 
