@@ -21,9 +21,10 @@ window.gotoItem = function(target) {
 document.body.appendChild(component());
 
 document.addEventListener('DOMContentLoaded', () => {
-  if (window.innerWidth > 410) {
-    document.write('スマートフォンを推奨しています。 お金や時間の都合によりスマホ以外では表示できません。');
-  }
+// adテスト用に一旦外すだけ
+//  if (window.innerWidth > 410) {
+//    document.write('スマートフォンを推奨しています。 お金や時間の都合によりスマホ以外では表示できません。');
+//  }
 });
 
 (() => {
