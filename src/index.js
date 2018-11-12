@@ -16,7 +16,7 @@ function component() {
 
 
 window.gotoItem = function(target) {
-  console.log(target);
+  console.log('あああああ');
 }
 document.body.appendChild(component());
 
@@ -107,11 +107,11 @@ function onVrViewLoad() {
         tooltip: {
           content: '<a onClick="gotoItem(this)" style="padding:1em;display:block;font-size:8px;">3,000円<br>資生堂マキアージュ </a>',
           position: 'right',
+        },
+        content: console.log('asdfa'),
           onClick: function() {
             alert('1');
           },
-        },
-        content: console.log('asdfa')
       },
       {
         id: 'textKakaku',
@@ -130,10 +130,10 @@ function onVrViewLoad() {
         tooltip: {
           content: '<a onClick="gotoItem(this)" style="padding-right:2em;display:block;font-size:1.1em;">2,800円<br>天井のライト<br>ダウンスポット</a>',
           position: 'right',
-          onClick: function() {
-            alert('2');
-          },
-        }
+        },
+        onClick: function() {
+          alert('2');
+        },
       },
     ],
     size: {
