@@ -4823,8 +4823,8 @@ PSVPanel.prototype._onMouseUp = function(evt) {
  * @private
  */
 PSVPanel.prototype._onMouseMove = function(evt) {
-console.log('moveing!');
   if (this.prop.mousedown) {
+    console.log('moveing!Mouse');
     evt.stopPropagation();
     this._resize(evt);
   }
@@ -4837,6 +4837,7 @@ console.log('moveing!');
  */
 PSVPanel.prototype._onTouchMove = function(evt) {
   if (this.prop.mousedown) {
+    console.log('moveing!Touch');
     this._resize(evt.touches[0]);
   }
 };
