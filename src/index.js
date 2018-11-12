@@ -78,6 +78,9 @@ function onVrViewLoad() {
     //panorama: "https://photo-sphere-viewer.js.org/assets/Bryce-Canyon-National-Park-Mark-Doliner.jpg",
     panorama: "./images/tokyoStation.jpg",
     container: 'vrview',
+          onClick: function() {
+            alert('3');
+          },
     pano_data: {
       full_width: 4000,
       full_height: 2000,
@@ -109,9 +112,9 @@ function onVrViewLoad() {
           position: 'right',
         },
         content: console.log('asdfa'),
-          onClick: function() {
-            alert('1');
-          },
+        onClick: function() {
+          alert('1');
+        },
       },
       {
         id: 'textKakaku',
