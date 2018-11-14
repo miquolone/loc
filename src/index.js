@@ -2,6 +2,8 @@
 //import 'three';
 import _ from 'lodash';
 import 'normalize.css';
+import 'superagent';
+import 'jquery';
 import './css.css';
 import '../photo-sphere-viewer.css';
 
