@@ -18,14 +18,15 @@ function component() {
 
 
 window.gotoItem = function(target) {
-  console.log(target);
+  console.log('あああああ');
 }
 document.body.appendChild(component());
 
 document.addEventListener('DOMContentLoaded', () => {
-  if (window.innerWidth > 410) {
-    document.write('スマートフォンを推奨しています。 お金や時間の都合によりスマホ以外では表示できません。');
-  }
+// adテスト用に一旦外すだけ
+//  if (window.innerWidth > 410) {
+//    document.write('スマートフォンを推奨しています。 お金や時間の都合によりスマホ以外では表示できません。');
+//  }
 });
 
 (() => {
@@ -33,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('123');
 
   /* トップ画面*/
-  if (location.pathname == "/") {
+  if (location.pathname == "/" || location.pathname == "/adtest" ) {
 
     window.addEventListener('DOMContentLoaded', onVrViewLoad);
 
@@ -79,6 +80,9 @@ function onVrViewLoad() {
     //panorama: "https://photo-sphere-viewer.js.org/assets/Bryce-Canyon-National-Park-Mark-Doliner.jpg",
     panorama: "./images/tokyoStation.jpg",
     container: 'vrview',
+    onClick: function() {
+      alert('3');
+    },
     pano_data: {
       full_width: 4000,
       full_height: 2000,
@@ -109,7 +113,10 @@ function onVrViewLoad() {
           content: '<a onClick="gotoItem(this)" style="padding:1em;display:block;font-size:8px;">3,000円<br>資生堂マキアージュ </a>',
           position: 'right',
         },
-        content: console.log('asdfa')
+        content: console.log('asdfa'),
+        onClick: function() {
+          alert('1');
+        },
       },
       {
         id: 'textKakaku',
@@ -128,7 +135,10 @@ function onVrViewLoad() {
         tooltip: {
           content: '<a onClick="gotoItem(this)" style="padding-right:2em;display:block;font-size:1.1em;">2,800円<br>天井のライト<br>ダウンスポット</a>',
           position: 'right',
-        }
+        },
+        onClick: function() {
+          alert('2');
+        },
       },
     ],
     size: {
@@ -140,4 +150,7 @@ function onVrViewLoad() {
   //PSV.parseAngle( '0.14']);
   //PSV.parsePosition("10% 50%");
   PSV.showTooltip({ content: 'Hello world', top: 200, left: 450, position: 'center bottom'})
+  PSV.ready = function() {
+    document.querySelector('.station-hud').addEventListener('click',function(){console.log(2)})
+  }
 }

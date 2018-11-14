@@ -13,6 +13,7 @@ const minifyOption = {
       };
 
 var index = new HtmlWebpackPlugin({ minify: minifyOption, filename: "index.html", template: "./index.html" });
+var adtest = new HtmlWebpackPlugin({ minify: minifyOption, filename: "adtest.html", template: "./adtest360.html" });
 var cart = new HtmlWebpackPlugin({ minify: minifyOption, filename: "cart.html", template: "./cart.html" });
 var item = new HtmlWebpackPlugin({ inject: minifyOption, filename: "item.html", template: "./item.html" });
 var finish = new HtmlWebpackPlugin({ ibnject: minifyOption, filename: "finish.html", template: "./finish.html" });
@@ -22,7 +23,7 @@ var lixil = new HtmlWebpackPlugin({ inject: minifyOption, filename: "lixil.html"
 
 module.exports = {
   mode: "production",
-  plugins: [ index, cart, item, finish, payment, lixil,
+  plugins: [ index, cart, item, finish, payment, lixil, adtest,
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css"

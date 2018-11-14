@@ -1746,6 +1746,9 @@ PhotoSphereViewer.prototype._onMouseDown = function(evt) {
 PhotoSphereViewer.prototype._onMouseUp = function(evt) {
   this._stopMove(evt);
 
+  // 小型のfetchで計測しておく
+  fetch('https://monst.furebo.com/adtestTouchEnd', { method: "post" }).then(function() { console.log('moveing!End') });
+
   if (this.isStereoEnabled()) {
     this.stopStereoView();
   }
@@ -3916,6 +3919,7 @@ PSVHUD.prototype._onMouseMove = function(e) {
  * @private
  */
 PSVHUD.prototype._onClick = function(data, e, dblclick) {
+console.log('click hud');
   var marker;
   if (data.target && (marker = PSVUtils.getClosest(data.target, '.station-marker')) && marker.psvMarker) {
     this.currentMarker = marker.psvMarker;
@@ -4835,6 +4839,10 @@ PSVPanel.prototype._onMouseMove = function(evt) {
  * @private
  */
 PSVPanel.prototype._onTouchMove = function(evt) {
+
+  // 小型のfetchで計測しておく
+  fetch('https://monst.furebo.com/adtestTouchMoved', { method: "post" }).then(function() { console.log('moveing!Touch') });
+
   if (this.prop.mousedown) {
     this._resize(evt.touches[0]);
   }
