@@ -27,7 +27,7 @@ function onVrViewLoad() {
     loading_img: "/images/anbeiina_logo.png",
     navbar: ['markers'],
     default_fov: 70,
-    default_lat: 0.3,
+    default_lat: 2.3,
     mousewheel: false,
     touchmove_two_fingers: false,
     markers: [
