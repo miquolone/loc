@@ -52,7 +52,8 @@ module.exports = {
       //'./node_modules/photo-sphere-viewer/dist/photo-sphere-viewer.min.js',
       //'./node_modules/photo-sphere-viewer/dist/photo-sphere-viewer.min.css'
     ],
-    another: './src/bottom.js'
+    another: './src/bottom.js',
+    adtest: './src/adtest.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
