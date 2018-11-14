@@ -12,7 +12,7 @@ window.gotoItem = function(target) {
 window.addEventListener('DOMContentLoaded', onVrViewLoad);
 function onVrViewLoad() {
   var PSV = new PhotoSphereViewer({
-    panorama: "./images/R0010215aa.jpg",
+    panorama: "/images/R0010215aa.jpg",
     container: 'vrview',
     pano_data: {
       full_width: 4000,
