@@ -33,8 +33,8 @@ function onVrViewLoad() {
     markers: [
       {
         id: 'imageAkita',
-        longitude: 0.8,
-        latitude: -0.23770,
+        longitude: 3.4,
+        latitude: 0.13770,
         image: '/images/anbeiina_logo.png',
         width: 60,
         height: 40,
