@@ -9,9 +9,9 @@ const PhotoSphereViewer = require('../photo-sphere-viewer');
 window.gotoItem = function(target) {
   "http://www.thr.mlit.go.jp/noshiro/kasen/moriyoshi/";
 }
+window.addEventListener('DOMContentLoaded', onVrViewLoad);
 function onVrViewLoad() {
   var PSV = new PhotoSphereViewer({
-    //panorama: "https://photo-sphere-viewer.js.org/assets/Bryce-Canyon-National-Park-Mark-Doliner.jpg",
     panorama: "./images/R0010215aa.jpg",
     container: 'vrview',
     pano_data: {
@@ -33,7 +33,7 @@ function onVrViewLoad() {
     markers: [
       {
         id: 'imageAkita',
-        longitude: 0.2,
+        longitude: 0.8,
         latitude: -0.23770,
         image: '/images/anbeiina_logo.png',
         width: 60,
