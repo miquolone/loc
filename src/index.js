@@ -74,8 +74,6 @@ function onVrViewLoad() {
   //    // Handle hotspot click.
   //  }
   //});
-  var rootURL = 'https://photo-sphere-viewer.js.org';
-
   var PSV = new PhotoSphereViewer({
     //panorama: "https://photo-sphere-viewer.js.org/assets/Bryce-Canyon-National-Park-Mark-Doliner.jpg",
     panorama: "./images/tokyoStation.jpg",
@@ -114,9 +112,6 @@ function onVrViewLoad() {
           position: 'right',
         },
         content: console.log('asdfa'),
-        onClick: function() {
-          alert('1');
-        },
       },
       {
         id: 'textKakaku',
@@ -136,13 +131,10 @@ function onVrViewLoad() {
           content: '<a onClick="gotoItem(this)" style="padding-right:2em;display:block;font-size:1.1em;">2,800円<br>天井のライト<br>ダウンスポット</a>',
           position: 'right',
         },
-        onClick: function() {
-          alert('2');
-        },
       },
     ],
     size: {
-      height: 350
+      height: 300
     }
   });
 
