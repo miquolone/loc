@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', onVrViewLoad);
 function onVrViewLoad() {
   var PSV = new PhotoSphereViewer({
     panorama: "/images/R0010215aa.jpg",
-    container: 'vrview',
+    container: 'advrview',
     pano_data: {
       full_width: 4000,
       full_height: 2000,
