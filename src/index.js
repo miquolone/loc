@@ -134,7 +134,7 @@ function onVrViewLoad() {
       },
     ],
     size: {
-      height: 300
+      height: 250
     }
   });
 
