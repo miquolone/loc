@@ -25,7 +25,6 @@
 
 <script>
   const netlifyIdentity = require('netlify-identity-widget');
-// Get the current user:
 const user = netlifyIdentity.currentUser();
 
 netlifyIdentity.init({
@@ -49,3 +48,8 @@ netlifyIdentity.close();
 netlifyIdentity.logout();
 netlifyIdentity.gotrue;
 </script>
+<style>
+  .callOut{
+    display:none;
+  }
+</style>
