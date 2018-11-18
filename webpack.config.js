@@ -19,6 +19,7 @@ var item = new HtmlWebpackPlugin({ inject: minifyOption, filename: "item.html", 
 var finish = new HtmlWebpackPlugin({ ibnject: minifyOption, filename: "finish.html", template: "./finish.html" });
 var payment = new HtmlWebpackPlugin({ inject: minifyOption, filename: "selectPayment.html", template: "./selectPayment.html" });
 var lixil = new HtmlWebpackPlugin({ inject: minifyOption, filename: "lixil.html", template: "./lixil.html" });
+var login = new HtmlWebpackPlugin({ inject: minifyOption, filename: "login.html", template: "./login.html" });
 
 
 module.exports = {
