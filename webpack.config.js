@@ -54,7 +54,8 @@ module.exports = {
       //'./node_modules/photo-sphere-viewer/dist/photo-sphere-viewer.min.css'
     ],
     another: './src/bottom.js',
-    adtest: './src/adtest.js'
+    adtest: './src/adtest.js',
+    login: './src/netlify-identity-widget.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
