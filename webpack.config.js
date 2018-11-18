@@ -24,7 +24,7 @@ var login = new HtmlWebpackPlugin({ inject: minifyOption, filename: "login.html"
 
 module.exports = {
   mode: "production",
-  plugins: [ index, cart, item, finish, payment, lixil, adtest,
+  plugins: [ index, cart, item, finish, payment, lixil, adtest, login,
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css"
