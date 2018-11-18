@@ -48,8 +48,8 @@ html{
 
 /* 360度カメラ */
 #cammera360 {
-  height: 23em;
-  margin: 5px;
+  height: 250px;
+  margin: 3px;
   padding: 0;
   background: #fff;
 }
